@@ -63,9 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\InstantiateCubes.cs" />
-    <Compile Include="Assets\ParamCube.cs" />
-    <Compile Include="Assets\Visualizer.cs" />
+    <Compile Include="Assets\Scripts\AudioProcessor.cs" />
+    <Compile Include="Assets\Scripts\InstantiateCubes.cs" />
+    <Compile Include="Assets\Scripts\ParamCube.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\SpawnNotes.cs" />
+    <Compile Include="Assets\Scripts\Visualizer.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/atiny/Documents/GitHub/New Unity Project/New Unity Project/Rythm-Game/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
