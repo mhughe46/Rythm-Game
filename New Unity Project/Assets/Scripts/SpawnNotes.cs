@@ -20,7 +20,10 @@ using System;
 public class SpawnNotes : MonoBehaviour
 {
 	public float timeBetweenSpawns = .2f;
+	public int laneCount;
 	float lastTimeSpawned = 0f;
+	public float laneSpace = 1;
+	public float hitRange = 1;
 
 	void Start ()
 	{
@@ -29,6 +32,13 @@ public class SpawnNotes : MonoBehaviour
 		AudioProcessor processor = FindObjectOfType<AudioProcessor> ();
 		processor.onBeat.AddListener (onOnbeatDetected);
 		processor.onSpectrum.AddListener (onSpectrum);
+
+		for (int i = 0; i < laneCount; i++)
+		{
+			Vector3 spawnPos = new Vector3(transform.position.x + (i * 2) - ((laneCount / 2) * laneSpace), transform.position.y, transform.position.z);
+			GameObject HitBox = (GameObject)Instantiate(Resources.Load("Hitbox"), spawnPos, Quaternion.identity);
+			HitBox.GetComponent<NoteHitDetection>().lane = i;
+		}
 	}
 
 	//this event will be called every time a beat is detected.
@@ -37,10 +47,13 @@ public class SpawnNotes : MonoBehaviour
 	void onOnbeatDetected (float[] spectrum)
 	{
 
+
 		float max = 0;
 		int maxInt = 0;
-		for (int i = 0; i < spectrum.Length; ++i) {
-			if (spectrum[i] >= max) {
+		for (int i = 0; i < spectrum.Length; ++i)
+		{
+			if (spectrum[i] >= max)
+			{
 				max = spectrum[i];
 				maxInt = i;
 			}
@@ -48,10 +61,12 @@ public class SpawnNotes : MonoBehaviour
 
 		if (Time.timeSinceLevelLoad - lastTimeSpawned >= timeBetweenSpawns)
 		{
-			Vector3 spawnPos = new Vector3(transform.position.x + (maxInt * 2) - ((spectrum.Length / 2)*2), transform.position.y + 10, transform.position.z);
-			Instantiate(Resources.Load("Sphere"), spawnPos, Quaternion.identity);
+			maxInt = UnityEngine.Random.Range(0, laneCount);
+			Vector3 spawnPos = new Vector3(transform.position.x + (maxInt * 2) - ((laneCount / 2) * laneSpace), transform.position.y + 10, transform.position.z);
+			GameObject Note = (GameObject)Instantiate(Resources.Load("Note"), spawnPos, Quaternion.identity);
+			Note.GetComponent<NoteHolder>().note = maxInt;
+			lastTimeSpawned = Time.timeSinceLevelLoad;
 		}
-
 	}
 
 	//This event will be called every frame while music is playing

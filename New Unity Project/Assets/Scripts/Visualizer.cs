@@ -8,29 +8,20 @@ public class Visualizer : MonoBehaviour
     AudioSource _audioSource;
     public static float[] _samples = new float[512];
     public static float[] _freqBand = new float[8];
+    public int bandCount = 8;
 
     float lastTimeSpawned;
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
         lastTimeSpawned = Time.timeSinceLevelLoad;
+        AudioProcessor processor = FindObjectOfType<AudioProcessor>();
+        processor.onBeat.AddListener(OnBeatHit);
     }
 
     private void Update()
     {
-        GetSpectrumAudioSource();
-        MakeFreqBands();
-
-        for (int i = 0; i < 8; i++) {
-            if (_freqBand[i] > .8f && Time.timeSinceLevelLoad - lastTimeSpawned > .5f)
-            {
-                Debug.Log("Spawned");
-                Vector3 spawnPos = new Vector3(i * 2, 10, 5);
-                Instantiate(Resources.Load("Sphere"), spawnPos, Quaternion.identity);
-
-                lastTimeSpawned = Time.timeSinceLevelLoad;
-            }
-        }
+        
 
     }
 
@@ -81,5 +72,34 @@ public class Visualizer : MonoBehaviour
         }
 
     }
+
+    void OnBeatHit(float[] spectrum) {
+        GetSpectrumAudioSource();
+        MakeFreqBands();
+
+        float maxBandDB = 0;
+        int maxBand = 0;
+
+
+        for (int i = 0; i < bandCount; i++)
+        {
+            if (_freqBand[i] > maxBandDB) {
+                maxBand = i;
+            }
+        }
+        Debug.Log(maxBand);
+
+        if (Time.timeSinceLevelLoad - lastTimeSpawned > .5f)
+        {
+            Vector3 spawnPos = new Vector3(maxBand * 2, 10, 5);
+            Instantiate(Resources.Load("Sphere"), spawnPos, Quaternion.identity);
+
+            lastTimeSpawned = Time.timeSinceLevelLoad;
+        }
+
+
+    }
+
+
 
 }
