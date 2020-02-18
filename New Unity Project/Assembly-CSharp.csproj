@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\NoteHolder.cs" />
     <Compile Include="Assets\Scripts\ParamCube.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\SpawnNotes.cs" />
     <Compile Include="Assets\Scripts\Visualizer.cs" />
     <Reference Include="Unity.Timeline.Editor">
