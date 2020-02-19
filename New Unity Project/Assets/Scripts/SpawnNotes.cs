@@ -24,6 +24,7 @@ public class SpawnNotes : MonoBehaviour
 	float lastTimeSpawned = 0f;
 	public float laneSpace = 1;
 	public float hitRange = 1;
+	public int lastSpawnedLane;
 
 	void Start ()
 	{
@@ -66,6 +67,10 @@ public class SpawnNotes : MonoBehaviour
 			GameObject Note = (GameObject)Instantiate(Resources.Load("Note"), spawnPos, Quaternion.identity);
 			Note.GetComponent<NoteHolder>().note = maxInt;
 			lastTimeSpawned = Time.timeSinceLevelLoad;
+			lastSpawnedLane = maxInt;
+
+			//calls level gen script
+			GameObject.FindGameObjectWithTag("LevelGen").GetComponent<LevelGenerator>().noteSpawned(maxInt);
 		}
 	}
 

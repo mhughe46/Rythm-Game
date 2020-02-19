@@ -57,4 +57,14 @@ public class LevelGenerator : MonoBehaviour
         newPath.GetComponent<RotatePath>()._pivot = this.transform;
         _activePaths.Add(newPath);
     }
+
+    //called 1.35 seconds before the note should be hit
+    public void noteSpawned(int Lane) { 
+        
+    }
+
+
+
+
+
 }
