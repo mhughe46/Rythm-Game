@@ -15,6 +15,13 @@ public class LevelGenerator : MonoBehaviour
 
     [SerializeField]
     Vector3 _pathSpawnPoint;
+
+    [SerializeField]
+    Transform _nextPath;
+    [SerializeField]
+    Transform _recycledPath;
+
+    public float _levelSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,36 +37,104 @@ public class LevelGenerator : MonoBehaviour
 
     private void GenerateCircle()
     {
-        for(int i = 360; i > 0; i -= 15)
-        {
-            CreatePath(0, i);
-        }
+        CreatePath(_pathsEmpty[Random.Range(0, _pathsEmpty.Count - 1)]);
     }
+
     private void CheckPathForGarabge()
     {
-        if (_activePaths[0].eulerAngles.x >= 320f && _activePaths[0].eulerAngles.x <= 321f)
+        if (_activePaths[0].eulerAngles.x <= 320f && _activePaths[0].eulerAngles.x >= 91f)
         {
             RecyclePath();
         }
-        if (_activePaths[_activePaths.Count - 1].eulerAngles.x <= 75f)
+        if (_activePaths[_activePaths.Count - 1].eulerAngles.x <= 74.4f)
         {
-            CreatePath(0);
+            CreatePath(_nextPath);
         }
     }
-    private void RecyclePath(int index = 0)
+
+    private void RecyclePath(int index = 0, bool doRecycle = true)
     {
-        Destroy(_activePaths[index].gameObject);
-        _activePaths.RemoveAt(0);
+        if (doRecycle)
+        {
+            if (_recycledPath == null && _nextPath.GetComponent<RotatePath>()._pathId == _activePaths[index].GetComponent<RotatePath>()._pathId)
+            {
+                _recycledPath = _activePaths[index];
+                _activePaths.RemoveAt(index);
+            }else if (_recycledPath != null || _nextPath.GetComponent<RotatePath>()._pathId != _activePaths[index].GetComponent<RotatePath>()._pathId)
+            {
+                Destroy(_activePaths[index].gameObject);
+                _activePaths.RemoveAt(index);
+            }
+        }else
+        {
+            Destroy(_activePaths[index].gameObject);
+            _activePaths.RemoveAt(index);
+        }
+        
     }
-    private void CreatePath(int index, float rotation = 90)
+
+    private Transform CreatePath(Transform path, float rotation = 90)
     {
-        Transform newPath = Instantiate(_pathsEmpty[Random.Range(0,3)], this.transform.position + _pathSpawnPoint, Quaternion.Euler(rotation, 0, 0), this.transform);
-        newPath.GetComponent<RotatePath>()._pivot = this.transform;
-        _activePaths.Add(newPath);
+        bool useRecycling = false;
+        Transform newPath = null;
+        if (_recycledPath != null)
+        {
+            if (_recycledPath.GetComponent<RotatePath>()._pathId == path.GetComponent<RotatePath>()._pathId)
+            {
+                useRecycling = true;
+            }
+        }
+
+        if (useRecycling)
+        {
+            newPath = _recycledPath;
+            newPath.position = this.transform.position + _pathSpawnPoint;
+            newPath.eulerAngles = new Vector3(90f, 0f ,0f);
+            _activePaths.Add(newPath);
+            _recycledPath = null;
+            Debug.Log("Recycled");
+        }
+        else
+        {
+            newPath = Instantiate(path, this.transform.position + _pathSpawnPoint, Quaternion.Euler(rotation, 0, 0), this.transform);
+            newPath.GetComponent<RotatePath>()._pivot = this.transform;
+            newPath.GetComponent<RotatePath>().speed = _levelSpeed;
+            _activePaths.Add(newPath);
+        }
+        
+        _nextPath = null;
+        SetNextPath(_pathsEmpty[0]);
+        return newPath;
+    }
+
+    private void SetNextPath(Transform nextPath, bool overwrite = false)
+    {
+        if (_nextPath == null || overwrite)
+        {
+            _nextPath = nextPath;
+        }
     }
 
     //called 1.35 seconds before the note should be hit
-    public void noteSpawned(int Lane) { 
+    public void noteSpawned(int Lane) {
+        switch (Lane)
+        {
+            case 0:
+                {
+                    SetNextPath(_pathsEmpty[1],true);
+                    break;
+                }
+            case 1:
+                {
+                    SetNextPath(_pathsEmpty[1],true);
+                    break;
+                }
+            default:
+                {
+                    SetNextPath(_pathsEmpty[0],true);
+                    break;
+                }
+        }
         
     }
 

@@ -8,6 +8,10 @@ public class RotatePath : MonoBehaviour
     private Transform _objectToRotate;
 
     public Transform _pivot;
+
+    public string _pathId;
+
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +22,11 @@ public class RotatePath : MonoBehaviour
     void Update()
     {
         Rotate();
-        print(_objectToRotate.eulerAngles.x);
+        //print(_objectToRotate.eulerAngles.x);
     }
 
     private void Rotate()
     {
-        _objectToRotate.RotateAround(_pivot.position, Vector3.left, 15f * Time.deltaTime);
+        _objectToRotate.RotateAround(_pivot.position, Vector3.left, (speed / Time.deltaTime) / 90f);
     }
 }
