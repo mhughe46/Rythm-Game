@@ -25,17 +25,9 @@ public class SpawnNotes : MonoBehaviour
 	public float laneSpace = 1;
 	public float hitRange = 1;
 	public int lastSpawnedLane;
-	float spawnHeight = 1;
-	public float timeToHit = 2;
-
-
 
 	void Start ()
 	{
-		//10 = 1.35
-		spawnHeight = (float)(timeToHit) * 10; 
-
-
 		//Select the instance of AudioProcessor and pass a reference
 		//to this object
 		AudioProcessor processor = FindObjectOfType<AudioProcessor> ();
@@ -71,7 +63,7 @@ public class SpawnNotes : MonoBehaviour
 		if (Time.timeSinceLevelLoad - lastTimeSpawned >= timeBetweenSpawns)
 		{
 			maxInt = UnityEngine.Random.Range(0, laneCount);
-			Vector3 spawnPos = new Vector3(transform.position.x + (maxInt * 2) - ((laneCount / 2) * laneSpace), transform.position.y + spawnHeight, transform.position.z);
+			Vector3 spawnPos = new Vector3(transform.position.x + (maxInt * 2) - ((laneCount / 2) * laneSpace), transform.position.y + 10, transform.position.z);
 			GameObject Note = (GameObject)Instantiate(Resources.Load("Note"), spawnPos, Quaternion.identity);
 			Note.GetComponent<NoteHolder>().note = maxInt;
 			lastTimeSpawned = Time.timeSinceLevelLoad;

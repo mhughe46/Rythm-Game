@@ -147,7 +147,7 @@ public class LevelGenerator : MonoBehaviour
             newPath.eulerAngles = new Vector3(90f, 0f ,0f);
             _activePaths.Add(newPath);
             _recycledPath = null;
-            //Debug.Log("Recycled");
+            Debug.Log("Recycled");
         }
         else
         {
