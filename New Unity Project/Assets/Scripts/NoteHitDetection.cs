@@ -30,6 +30,7 @@ public class NoteHitDetection : MonoBehaviour
                         {
                             if (hitBox.GetComponent<NoteHitDetection>().lane == i && note.GetComponent<NoteHolder>().note == i)
                             {
+                                Debug.Log(note.GetComponent<NoteHolder>().timeSinceCreated);
                                 noteInRange = true;
                                 Destroy(note);
                                 OnNoteHit();
@@ -53,7 +54,7 @@ public class NoteHitDetection : MonoBehaviour
     }
 
     void OnNoteHit() {
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
     }
 
     void OnNoteMiss() {

@@ -6,7 +6,7 @@ public class MusicDelayer : MonoBehaviour
 {
     private void Start()
     {
-        Invoke("StartMusic", 1.35f);
+        Invoke("StartMusic", 2f);
     }
 
     void StartMusic() {
