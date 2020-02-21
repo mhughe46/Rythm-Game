@@ -10,6 +10,8 @@ public class RotatePath : MonoBehaviour
     public Transform _pivot;
 
     public string _pathId;
+    public int _pathDifficulty = 0;
+    public LevelTheme _pathTheme;
 
     public float speed;
     // Start is called before the first frame update
@@ -27,6 +29,6 @@ public class RotatePath : MonoBehaviour
 
     private void Rotate()
     {
-        _objectToRotate.RotateAround(_pivot.position, Vector3.left, (speed / Time.deltaTime) / 90f);
+        _objectToRotate.RotateAround(_pivot.position, Vector3.left, (105f * Time.deltaTime)/speed);
     }
 }

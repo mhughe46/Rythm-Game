@@ -17,14 +17,21 @@ public class LevelGenerator : MonoBehaviour
     Vector3 _pathSpawnPoint;
 
     [SerializeField]
+    Transform _pathData;
+    [SerializeField]
     Transform _nextPath;
     [SerializeField]
     Transform _recycledPath;
 
+    public Level _level;
     public float _levelSpeed;
+
+    [SerializeField]
+    List<Level> _loadedLevels = new List<Level>();
     // Start is called before the first frame update
     void Start()
     {
+       
         GenerateCircle();
     }
 
@@ -33,6 +40,16 @@ public class LevelGenerator : MonoBehaviour
     {
         CheckPathForGarabge();
         
+    }
+
+    private void CreateLevel(AudioClip songClip, int difficulty)
+    {
+        Level level;
+        List<Path> emptyPaths = new List<Path>();
+        List<Path> jumpPaths = new List<Path>();
+        List<Path> slidePaths = new List<Path>();
+        List<Path> rightPaths = new List<Path>();
+        List<Path> leftPaths = new List<Path>();
     }
 
     private void GenerateCircle()
@@ -46,7 +63,7 @@ public class LevelGenerator : MonoBehaviour
         {
             RecyclePath();
         }
-        if (_activePaths[_activePaths.Count - 1].eulerAngles.x <= 74.4f)
+        if (_activePaths[_activePaths.Count - 1].eulerAngles.x <= 75f)
         {
             CreatePath(_nextPath);
         }
