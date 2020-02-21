@@ -71,11 +71,15 @@
     <Compile Include="Assets\Scripts\NoteHitDetection.cs" />
     <Compile Include="Assets\Scripts\NoteHolder.cs" />
     <Compile Include="Assets\Scripts\ParamCube.cs" />
+    <Compile Include="Assets\Scripts\PathData.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RotatePath.cs" />
     <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\SpawnNotes.cs" />
     <Compile Include="Assets\Scripts\Visualizer.cs" />
+    <Compile Include="Assets\UniBpmAnalyzer-master\Assets\UniBpmAnalyzer\Example\BPMProcessor.cs" />
+    <Compile Include="Assets\UniBpmAnalyzer-master\Assets\UniBpmAnalyzer\Scripts\BPMAnalysis.cs" />
+    <None Include="Assets\UniBpmAnalyzer-master\ProjectSettings\ProjectVersion.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/atiny/Documents/GitHub/New Unity Project/New Unity Project/Rythm-Game/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
