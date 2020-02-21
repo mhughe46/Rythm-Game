@@ -47,7 +47,8 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
-    private Level CreateLevel(AudioClip songClip, int difficulty)
+    //Takes song and difficulty and all the appropriate objects for the level.
+    private Level CreateLevel(AudioClip songClip, int difficulty, LevelTheme theme = LevelTheme.park)
     {
         Level level;
         
@@ -58,7 +59,7 @@ public class LevelGenerator : MonoBehaviour
         List<Path> leftPaths = new List<Path>();
         foreach (KeyValuePair<string, Path> path in pathsData.pathsLibrary)
         {
-            if (difficulty <= path.Value.difficulty)
+            if (difficulty <= path.Value.difficulty && (path.Value.theme == theme || path.Value.theme == LevelTheme.generic))
             {
                 switch (path.Value.pathType)
                 {
@@ -185,6 +186,16 @@ public class LevelGenerator : MonoBehaviour
                     break;
                 }
             case 2:
+                {
+                    SetNextPath(_pathsEmpty[0], true);
+                    break;
+                }
+            case 3:
+                {
+                    SetNextPath(_pathsEmpty[2], true);
+                    break;
+                }
+            case 4:
                 {
                     SetNextPath(_pathsEmpty[2], true);
                     break;

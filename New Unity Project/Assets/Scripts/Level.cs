@@ -71,6 +71,7 @@ public class Level
         }
     }
 
+    //Get a specified path at a specified index
     public Transform GetPath(int pathListIndex, int pathIndex)
     {
         List<Path> pathToSearch;
@@ -115,6 +116,7 @@ public class Level
         return pathToSearch[pathIndex].pathObject;
     }
 
+    //Get a random path from a specified list
     public Transform GetRandomPath(int pathListIndex)
     {
         List<Path> pathToSearch;
@@ -158,5 +160,6 @@ public class Level
 public enum LevelTheme
 {
     debug,
+    generic,
     park
 }
