@@ -15,6 +15,7 @@ public class BPMProcessor : MonoBehaviour
 
     private void Start()
     {
+        targetClip = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().song;
         int bpm = BMPAnalysis.AnalyzeBpm(targetClip);
         if (bpm < 0)
         {

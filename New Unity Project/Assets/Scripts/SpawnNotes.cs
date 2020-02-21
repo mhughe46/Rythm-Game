@@ -26,13 +26,14 @@ public class SpawnNotes : MonoBehaviour
 	public float hitRange = 1;
 	public int lastSpawnedLane;
 	float spawnHeight = 1;
-	public float timeToHit = 2;
+	float timeToHit = 2;
 
 
 
 	void Start ()
 	{
 		//10 = 1.35
+		timeToHit = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().NoteSpawnDelay;
 		spawnHeight = (float)(timeToHit) * 10; 
 
 
