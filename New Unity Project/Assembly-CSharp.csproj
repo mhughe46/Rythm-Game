@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\NoteHolder.cs" />
     <Compile Include="Assets\Scripts\ParamCube.cs" />
     <Compile Include="Assets\Scripts\PathData.cs" />
+    <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RotatePath.cs" />
     <Compile Include="Assets\Scripts\Settings.cs" />
