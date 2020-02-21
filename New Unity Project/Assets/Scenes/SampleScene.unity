@@ -512,10 +512,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenSpawns: 0.5
-  laneCount: 3
+  laneCount: 5
   laneSpace: 1
   hitRange: 0.5
   lastSpawnedLane: 0
+  spawnHeight: 10
 --- !u!114 &170982300
 MonoBehaviour:
   m_ObjectHideFlags: 0

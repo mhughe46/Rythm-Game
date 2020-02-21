@@ -16,6 +16,8 @@ public class NoteHolder : MonoBehaviour
     private void Update()
     {
         timeSinceCreated = Time.timeSinceLevelLoad - timeCreated;
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = Vector3.down*10;
     }
 
 
