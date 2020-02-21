@@ -29,14 +29,14 @@ public class PathData : MonoBehaviour
 
     private void PopulatePathsLibrary()
     {
-        ReadPathList(_pathsEmpty);
-        ReadPathList(_pathsJumpObis);
-        ReadPathList(_pathsSlideObis);
-        ReadPathList(_pathsDodgeRight);
-        ReadPathList(_pathsDodgeLeft);
+        ReadPathList(_pathsEmpty, PathType.Empty);
+        ReadPathList(_pathsJumpObis, PathType.Jump);
+        ReadPathList(_pathsSlideObis, PathType.Slide);
+        ReadPathList(_pathsDodgeRight, PathType.Right);
+        ReadPathList(_pathsDodgeLeft, PathType.Left);
     }
 
-    private List<Path> ReadPathList(List<Transform> pathList)
+    private List<Path> ReadPathList(List<Transform> pathList, PathType pathType)
     {
         List<Path> pathInfo = new List<Path>();
         foreach (Transform path in pathList)
@@ -45,6 +45,7 @@ public class PathData : MonoBehaviour
             newPath.id = path.GetComponent<RotatePath>()._pathId;
             newPath.difficulty = path.GetComponent<RotatePath>()._pathDifficulty;
             newPath.theme = path.GetComponent<RotatePath>()._pathTheme;
+            newPath.pathType = pathType;
             newPath.pathObject = path;
 
             if (!pathsLibrary.ContainsKey(newPath.id))
@@ -62,4 +63,14 @@ public struct Path
     public Transform pathObject;
     public int difficulty;
     public LevelTheme theme;
+    public PathType pathType;
+}
+
+public enum PathType
+{
+    Empty,
+    Jump,
+    Slide,
+    Right,
+    Left
 }

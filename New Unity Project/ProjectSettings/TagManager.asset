@@ -8,6 +8,7 @@ TagManager:
   - HitBox
   - Processor
   - LevelGen
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             if (_jumpTime <= 1)
             {
                 _jumpTime += Time.deltaTime * _jumpSpeed;
-                Vector3 jumpDistance = new Vector3(_playerObject.position.x, _jumpCurve.Evaluate(_jumpTime) * _jumpPower, _playerObject.position.z);
+                Vector3 jumpDistance = new Vector3(_playerObject.position.x, _laneMiddle.position.y + (_jumpCurve.Evaluate(_jumpTime) * _jumpPower), _playerObject.position.z);
                 _playerObject.position = jumpDistance;
             }else
             {

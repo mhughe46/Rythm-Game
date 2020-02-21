@@ -27,6 +27,11 @@ public class LevelGenerator : MonoBehaviour
     public float _levelSpeed;
 
     [SerializeField]
+    BPMProcessor _bpmProcessor;
+    [SerializeField]
+    PathData pathsData;
+
+    [SerializeField]
     List<Level> _loadedLevels = new List<Level>();
     // Start is called before the first frame update
     void Start()
@@ -42,14 +47,45 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
-    private void CreateLevel(AudioClip songClip, int difficulty)
+    private Level CreateLevel(AudioClip songClip, int difficulty)
     {
         Level level;
+        
         List<Path> emptyPaths = new List<Path>();
         List<Path> jumpPaths = new List<Path>();
         List<Path> slidePaths = new List<Path>();
         List<Path> rightPaths = new List<Path>();
         List<Path> leftPaths = new List<Path>();
+        foreach (KeyValuePair<string, Path> path in pathsData.pathsLibrary)
+        {
+            if (difficulty <= path.Value.difficulty)
+            {
+                switch (path.Value.pathType)
+                {
+                    case PathType.Empty:
+                        emptyPaths.Add(path.Value);
+                        break;
+                    case PathType.Jump:
+                        jumpPaths.Add(path.Value);
+                        break;
+                    case PathType.Slide:
+                        slidePaths.Add(path.Value);
+                        break;
+                    case PathType.Right:
+                        rightPaths.Add(path.Value);
+                        break;
+                    case PathType.Left:
+                        leftPaths.Add(path.Value);
+                        break;
+                    default:
+                        emptyPaths.Add(path.Value);
+                        break;
+                }
+            }
+        }
+
+        level = new Level(songClip.name, songClip, difficulty, LevelTheme.debug, emptyPaths, jumpPaths, slidePaths, rightPaths, leftPaths);
+        return level;
     }
 
     private void GenerateCircle()
@@ -69,6 +105,7 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
+    //if the next path is the same as this path, recycle this to save performance
     private void RecyclePath(int index = 0, bool doRecycle = true)
     {
         if (doRecycle)
@@ -90,6 +127,7 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
+    //Spawn a new path or use the recycled one
     private Transform CreatePath(Transform path, float rotation = 90)
     {
         bool useRecycling = false;
@@ -138,12 +176,17 @@ public class LevelGenerator : MonoBehaviour
         {
             case 0:
                 {
-                    SetNextPath(_pathsEmpty[1],true);
+                    SetNextPath(_pathsEmpty[0],true);
                     break;
                 }
             case 1:
                 {
                     SetNextPath(_pathsEmpty[1],true);
+                    break;
+                }
+            case 2:
+                {
+                    SetNextPath(_pathsEmpty[2], true);
                     break;
                 }
             default:
