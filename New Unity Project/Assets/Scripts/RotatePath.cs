@@ -14,17 +14,17 @@ public class RotatePath : MonoBehaviour
     public LevelTheme _pathTheme;
 
     public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+ 
     }
 
     // Update is called once per frame
     void Update()
     {
         Rotate();
-        //print(_objectToRotate.eulerAngles.x);
     }
 
     private void Rotate()

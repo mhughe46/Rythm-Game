@@ -398,7 +398,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6925270031654055857, guid: e9b5813e7af52dc45ac3407cdff8a7d8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: d34b232016dd18a4dbb5018e1b94b0c6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e2591337275b2ae429f492f48bc7476d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1147,7 +1147,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 2.6573734}
+  m_BoundingSphereOverride: {x: 0, y: 3.1e-44, z: 2.54e-42, w: 1.05e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2099,7 +2099,7 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: e9b5813e7af52dc45ac3407cdff8a7d8, type: 2}
   musicVolume: 0
   sfxVolume: 0
-  song: {fileID: 8300000, guid: d34b232016dd18a4dbb5018e1b94b0c6, type: 3}
+  song: {fileID: 8300000, guid: e2591337275b2ae429f492f48bc7476d, type: 3}
   NoteSpawnDelay: 2
 --- !u!4 &2008594892
 Transform:
@@ -2163,9 +2163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pathsEmpty:
-  - {fileID: 5237082403839890546, guid: 6a8de0b4b11dcdd41bee242db5404ab2, type: 3}
-  - {fileID: 6459181657066954071, guid: 46572851b1f68104b8a1507866e1c177, type: 3}
+  - {fileID: 6376306283950931105, guid: e5c19217ea4914a4aa833d6a0c3b27a9, type: 3}
+  - {fileID: 5529719696363627200, guid: 6d39525357d25124291ad47772ca6bb3, type: 3}
   - {fileID: 6459181657066954071, guid: e605b53b065e6aa48b649ab0f478d437, type: 3}
+  - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
   _pathsObstacles: []
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
@@ -2175,6 +2176,8 @@ MonoBehaviour:
   _levelSpeed: 3
   _bpmProcessor: {fileID: 0}
   pathsData: {fileID: 0}
+  _noteScalerDelay: -1
+  _globalPropScaler: 1
 --- !u!114 &2035038339
 MonoBehaviour:
   m_ObjectHideFlags: 0

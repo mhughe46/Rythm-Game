@@ -33,6 +33,9 @@ public class LevelGenerator : MonoBehaviour
 
     [SerializeField]
     List<Level> _loadedLevels = new List<Level>();
+
+    public float _noteScalerDelay = -1;
+    public float _globalPropScaler = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -177,7 +180,7 @@ public class LevelGenerator : MonoBehaviour
         {
             case 0:
                 {
-                    SetNextPath(_pathsEmpty[0],true);
+                    SetNextPath(_pathsEmpty[3],true);
                     break;
                 }
             case 1:
@@ -192,7 +195,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             case 3:
                 {
-                    SetNextPath(_pathsEmpty[2], true);
+                    SetNextPath(_pathsEmpty[1], true);
                     break;
                 }
             case 4:
