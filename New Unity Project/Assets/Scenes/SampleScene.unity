@@ -516,6 +516,13 @@ MonoBehaviour:
   laneSpace: 1
   hitRange: 0.5
   lastSpawnedLane: 0
+  bounce: 1
+  spectrumData:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &170982300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2435,6 +2442,8 @@ MonoBehaviour:
   _nextPath: {fileID: 0}
   _recycledPath: {fileID: 0}
   _levelSpeed: 3
+  _bpmProcessor: {fileID: 0}
+  pathsData: {fileID: 0}
 --- !u!114 &2035038339
 MonoBehaviour:
   m_ObjectHideFlags: 0

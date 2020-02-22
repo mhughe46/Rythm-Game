@@ -31,7 +31,7 @@ public class AudioProcessor : MonoBehaviour
 	// fft sampling frequency
 
 	/* log-frequency averaging controls */
-	private int nBand = 12;
+	private int nBand = 5;
 	// number of bands
 
 	public float gThresh = 0.1f;
@@ -87,7 +87,7 @@ public class AudioProcessor : MonoBehaviour
 		scorefun = new float[colmax];
 		dobeat = new float[colmax];
 		spectrum = new float[bufferSize];
-		averages = new float[12];
+		averages = new float[5];
 		acVals = new float[maxlag];
 		alph = 100 * gThresh;
 	}
@@ -274,14 +274,14 @@ public class AudioProcessor : MonoBehaviour
 
 	public void computeAverages (float[] data)
 	{
-		for (int i = 0; i < 12; i++) {
+		for (int i = 0; i < 5; i++) {
 			float avg = 0;
 			int lowFreq;
 			if (i == 0)
 				lowFreq = 0;
 			else
-				lowFreq = (int)((samplingRate / 2) / (float)System.Math.Pow (2, 12 - i));
-			int hiFreq = (int)((samplingRate / 2) / (float)System.Math.Pow (2, 11 - i));
+				lowFreq = (int)((samplingRate / 2) / (float)System.Math.Pow (2, 5 - i));
+			int hiFreq = (int)((samplingRate / 2) / (float)System.Math.Pow (2, 4 - i));
 			int lowBound = freqToIndex (lowFreq);
 			int hiBound = freqToIndex (hiFreq);
 			for (int j = lowBound; j <= hiBound; j++) {

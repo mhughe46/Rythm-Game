@@ -27,8 +27,9 @@ public class SpawnNotes : MonoBehaviour
 	public int lastSpawnedLane;
 	float spawnHeight = 1;
 	float timeToHit = 2;
+	public float bounce;
 
-
+	public float[] spectrumData = new float[5];
 
 	void Start ()
 	{
@@ -56,7 +57,7 @@ public class SpawnNotes : MonoBehaviour
 	//to adjust the sensitivity
 	void onOnbeatDetected (float[] spectrum)
 	{
-
+		//Debug.Log(spectrum.Length);
 
 		float max = 0;
 		int maxInt = 0;
@@ -88,6 +89,11 @@ public class SpawnNotes : MonoBehaviour
 	{
 		//The spectrum is logarithmically averaged
 		//to 12 bands
+
+		for (int b = 0; b < 5; b++) {
+			spectrumData[b] = spectrum[b] * bounce;
+		}
+
 
 		for (int i = 0; i < spectrum.Length; ++i) {
 			Vector3 start = new Vector3 (i, 0, 0);
