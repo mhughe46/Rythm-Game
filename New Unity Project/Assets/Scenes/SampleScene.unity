@@ -515,6 +515,13 @@ MonoBehaviour:
   laneSpace: 1
   hitRange: 0.5
   lastSpawnedLane: 0
+  bounce: 1
+  spectrumData:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &170982300
 MonoBehaviour:
   m_ObjectHideFlags: 0
