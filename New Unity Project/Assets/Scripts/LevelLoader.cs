@@ -21,6 +21,7 @@ public class LevelLoader : MonoBehaviour
         _settings.NoteSpawnDelay = SetLevelSpeed(_levelInit._selectedLevel.Difficulty);
         _levelGenny._levelSpeed = SetLevelSpeed(_levelInit._selectedLevel.Difficulty);
         GameObject.FindGameObjectWithTag("Processor").GetComponent<AudioSource>().clip = _levelInit._selectedLevel.Song;
+        GameObject.FindGameObjectWithTag("Processor").GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
@@ -32,15 +33,15 @@ public class LevelLoader : MonoBehaviour
     private float SetLevelSpeed(int difficulty)
     {
         float levelSpeed = 1;
-        if (difficulty >= 5)
+        if (difficulty >= 4.9)
         {
             return levelSpeed = 1;
         }
-        else if (difficulty >= 4)
+        else if (difficulty >= 3.9)
         {
             return levelSpeed = 1.35f;
         }
-        else if (difficulty >= 3)
+        else if (difficulty >= 2.9)
         {
             return levelSpeed = 1.5f;
         }
