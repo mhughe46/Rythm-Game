@@ -13,6 +13,12 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField]
     float _healTimer = 5;
+
+    [SerializeField]
+    private AudioSource songAudio;
+
+    bool doHurtPitch = false;
+    bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         HurtTimer();
+        HurtPitch(0.7f);
+        DoDeath();
     }
 
     private void HurtTimer()
@@ -46,10 +54,44 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void HurtPitch(float hurtPitch)
+    {
+        if (doHurtPitch && songAudio.pitch > hurtPitch)
+        {
+            songAudio.pitch = Mathf.Lerp(songAudio.pitch, hurtPitch, Time.deltaTime * 3);
+            if (songAudio.pitch <= hurtPitch + 0.1f)
+            {
+                doHurtPitch = false;
+            }
+        }
+        if (!doHurtPitch && songAudio.pitch < 1 && !isDead)
+        {
+            songAudio.pitch = Mathf.Lerp(songAudio.pitch, 1, Time.deltaTime * 5);
+        }
+    }
+
     public void Hurt()
     {
         _timeSinceHurt = 0;
         _playerHealth--;
+        doHurtPitch = true;
+        
+
+    }
+
+    public void DoDeath()
+    {
+        if (_playerHealth <= 0)
+        {
+            isDead = true;
+            if (songAudio.pitch > 0.01f)
+            {
+                songAudio.pitch = Mathf.Lerp(songAudio.pitch, 0f, Time.deltaTime * 3);
+            }else if (songAudio.pitch < 0.01f)
+            {
+                songAudio.Pause();
+            }
+        }
     }
 
     public void Heal(int healAmount = 1)

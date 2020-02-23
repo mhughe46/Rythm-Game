@@ -16,6 +16,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     Vector3 _pathSpawnPoint;
 
+
     [SerializeField]
     Transform _pathData;
     [SerializeField]
@@ -34,12 +35,13 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     List<Level> _loadedLevels = new List<Level>();
 
-    public float _noteScalerDelay = -1;
+    [SerializeField]
+    SpawnNotes _noteSpawner;
+
     public float _globalPropScaler = 1f;
     // Start is called before the first frame update
     void Start()
     {
-       
         GenerateCircle();
     }
 
@@ -212,7 +214,14 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
+    public void GetScaleMultiplier()
+    {
+        float scaler = 1;
+        for (int i = 0; i < _noteSpawner.spectrumData.Length; i++)
+        {
 
+        }
+    }
 
 
 
