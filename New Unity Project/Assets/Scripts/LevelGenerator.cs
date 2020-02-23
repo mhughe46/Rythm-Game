@@ -187,7 +187,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             case 1:
                 {
-                    SetNextPath(_pathsEmpty[1],true);
+                    SetNextPath(_pathsEmpty[5],true);
                     break;
                 }
             case 2:
@@ -197,7 +197,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             case 3:
                 {
-                    SetNextPath(_pathsEmpty[1], true);
+                    SetNextPath(_pathsEmpty[4], true);
                     break;
                 }
             case 4:

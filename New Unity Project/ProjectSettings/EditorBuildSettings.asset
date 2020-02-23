@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/OrionTest.unity
+    guid: 0dd79283cabd5b74ebb85cfff41a4372
   m_configObjects: {}

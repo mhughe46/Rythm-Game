@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 76582607}
   m_LocalRotation: {x: -0.43045917, y: -0.43045917, z: -0.5609856, w: 0.5609857}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 37.5, y: 2, z: 37.5}
+  m_LocalScale: {x: 37.5, y: 2.4, z: 37.5}
   m_Children: []
   m_Father: {fileID: 2035038337}
   m_RootOrder: 1
@@ -398,7 +398,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6925270031654055857, guid: e9b5813e7af52dc45ac3407cdff8a7d8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: e2591337275b2ae429f492f48bc7476d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d34b232016dd18a4dbb5018e1b94b0c6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1077,7 +1077,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: NaN, w: 8.4e-44}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1173,14 +1173,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5372705, y: 20.58, z: -2.1}
+  m_LocalRotation: {x: 0.2588186, y: -0, z: -0, w: 0.965926}
+  m_LocalPosition: {x: 1.5372705, y: 23.4, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1306141539}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30.000002, y: 0, z: 0}
 --- !u!82 &963194229
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2074,7 +2074,7 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: e9b5813e7af52dc45ac3407cdff8a7d8, type: 2}
   musicVolume: 0
   sfxVolume: 0
-  song: {fileID: 8300000, guid: e2591337275b2ae429f492f48bc7476d, type: 3}
+  song: {fileID: 8300000, guid: d34b232016dd18a4dbb5018e1b94b0c6, type: 3}
   NoteSpawnDelay: 2
 --- !u!4 &2008594892
 Transform:
@@ -2140,15 +2140,17 @@ MonoBehaviour:
   _pathsEmpty:
   - {fileID: 6376306283950931105, guid: e5c19217ea4914a4aa833d6a0c3b27a9, type: 3}
   - {fileID: 5529719696363627200, guid: 6d39525357d25124291ad47772ca6bb3, type: 3}
-  - {fileID: 6459181657066954071, guid: e605b53b065e6aa48b649ab0f478d437, type: 3}
+  - {fileID: 1666113770214287629, guid: fb1fb777e39239a4f9d84830c534343a, type: 3}
   - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
+  - {fileID: 6418448355681623950, guid: 2e32600bd39ec5f458ef1147bdf0d3b4, type: 3}
+  - {fileID: 5529719696363627200, guid: b300ba4a663c90d4784ce2997f2da48c, type: 3}
   _pathsObstacles: []
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
   _pathData: {fileID: 0}
   _nextPath: {fileID: 0}
   _recycledPath: {fileID: 0}
-  _levelSpeed: 3
+  _levelSpeed: 2
   _bpmProcessor: {fileID: 0}
   pathsData: {fileID: 0}
   _noteSpawner: {fileID: 0}
