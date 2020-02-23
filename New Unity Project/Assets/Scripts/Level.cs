@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Level
 {
+    [SerializeField]
     private string _songName;
+    [SerializeField]
     private AudioClip _song;
     private int _difficulty;
+    [SerializeField]
     private LevelTheme _levelTheme;
 
     private List<Path> _pathsEmpty = new List<Path>();
@@ -154,6 +158,41 @@ public class Level
                 }
         }
         return pathToSearch[Random.Range(0,pathToSearch.Count-1)].pathObject;
+    }
+
+    public void SetDifficultyFromBPM(int bpm)
+    {
+        float bpmRatio = bpm / 100;
+        if (bpmRatio >= 5)
+        {
+            _difficulty = 5;
+            return;
+        }
+        else if (bpmRatio >= 4)
+        {
+            _difficulty = 4;
+            return;
+        }
+        else if (bpmRatio >= 3)
+        {
+            _difficulty = 3;
+            return;
+        }
+        else if (bpmRatio >= 2)
+        {
+            _difficulty = 2;
+            return;
+        }
+        else if (bpmRatio >= 1)
+        {
+            _difficulty = 1;
+            return;
+        }
+        else if (bpmRatio < 1)
+        {
+            _difficulty = 0;
+            return;
+        }
     }
 }
 

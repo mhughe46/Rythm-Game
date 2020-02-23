@@ -13,15 +13,32 @@ public class BPMProcessor : MonoBehaviour
     private AudioClip targetClip;
     public int BPM;
 
+    [SerializeField]
+    bool isCalculator = false;
+
     private void Start()
     {
-        targetClip = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().song;
-        int bpm = BMPAnalysis.AnalyzeBpm(targetClip);
+        if (!isCalculator)
+        {
+            targetClip = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().song;
+            int bpm = BMPAnalysis.AnalyzeBpm(targetClip);
+            if (bpm < 0)
+            {
+                Debug.LogError("AudioClip is null.");
+                return;
+            }
+            BPM = bpm;
+        }
+    }
+
+    public int calculateBPM(AudioClip audio)
+    {
+        int bpm = BMPAnalysis.AnalyzeBpm(audio);
         if (bpm < 0)
         {
             Debug.LogError("AudioClip is null.");
-            return;
+            return 0;
         }
-        BPM = bpm;
+       return bpm;
     }
 }

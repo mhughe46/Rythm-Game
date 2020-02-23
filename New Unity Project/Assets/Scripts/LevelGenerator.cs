@@ -38,6 +38,9 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     SpawnNotes _noteSpawner;
 
+    [SerializeField]
+    Settings _settings;
+
     public float _globalPropScaler = 1f;
     // Start is called before the first frame update
     void Start()
@@ -214,14 +217,7 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
-    public void GetScaleMultiplier()
-    {
-        float scaler = 1;
-        for (int i = 0; i < _noteSpawner.spectrumData.Length; i++)
-        {
-
-        }
-    }
+   
 
 
 
