@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -17,6 +19,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private AudioSource songAudio;
 
+    [SerializeField]
+    private Image _healthBar;
+
     bool doHurtPitch = false;
     bool isDead = false;
     // Start is called before the first frame update
@@ -30,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     {
         HurtTimer();
         HurtPitch(0.7f);
+        _healthBar.fillAmount = Mathf.Lerp(_healthBar.fillAmount, (float)_playerHealth / (float)_playerMaxHealth, Time.deltaTime*5f);
         DoDeath();
     }
 
@@ -108,5 +114,10 @@ public class PlayerHealth : MonoBehaviour
         {
             Hurt();
         }
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

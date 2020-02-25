@@ -46,6 +46,11 @@ public class MenuController : MonoBehaviour
         animator.SetInteger("Menu", menuPanel);
     }
 
+    public void OnQuit()
+    {
+        Application.Quit();
+    }
+
     public void LoadNextLevel()
     {
         switch(_levelData._selectedLevel.Theme)
