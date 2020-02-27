@@ -96,6 +96,7 @@ public class PlayerHealth : MonoBehaviour
             }else if (songAudio.pitch < 0.01f)
             {
                 songAudio.Pause();
+                Time.timeScale = 0;
             }
         }
     }

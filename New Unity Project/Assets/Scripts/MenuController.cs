@@ -35,9 +35,11 @@ public class MenuController : MonoBehaviour
         if (_levelData._selectedLevel.Song == null)
         {
             _playLevelButton.interactable = false;
+            _playLevelButton.GetComponentInChildren<Text>().text = "Select a Level";
         }else
         {
             _playLevelButton.interactable = true;
+            _playLevelButton.GetComponentInChildren<Text>().text = "Play Level";
         }
     }
 
