@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioClipClass.cs" />
     <Compile Include="Assets\Scripts\AudioProcessor.cs" />
     <Compile Include="Assets\Scripts\GlobalController.cs" />
     <Compile Include="Assets\Scripts\InstantiateCubes.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\RotatePath.cs" />
     <Compile Include="Assets\Scripts\ScaleProp.cs" />
+    <Compile Include="Assets\Scripts\SelectFile.cs" />
     <Compile Include="Assets\Scripts\Settings.cs" />
     <Compile Include="Assets\Scripts\SpawnNotes.cs" />
     <Compile Include="Assets\Scripts\Visualizer.cs" />
