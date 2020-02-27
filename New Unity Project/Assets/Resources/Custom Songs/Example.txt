@@ -1,0 +1,4 @@
+Name: Example Song
+Difficulty: 2
+Theme: park
+Thumbnail: C:\Users\spyjack\Pictures\Spyjack_Icons

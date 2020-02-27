@@ -20,6 +20,7 @@ public class LevelSelector : MonoBehaviour
     {
         SetDifficultyColor();
         _levelName.text = level.Name;
+        _thumbnail.sprite = level.Thumbnail;
     }
 
     public void SelectThisLevel()

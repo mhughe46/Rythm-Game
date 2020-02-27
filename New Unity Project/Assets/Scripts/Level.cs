@@ -12,6 +12,8 @@ public class Level
     private int _difficulty;
     [SerializeField]
     private LevelTheme _levelTheme;
+    [SerializeField]
+    private Sprite _thumbnail;
 
     private List<Path> _pathsEmpty = new List<Path>();
     private List<Path> _pathsJump = new List<Path>();
@@ -39,40 +41,20 @@ public class Level
     {
         get { return _levelTheme; }
     }
+    public Sprite Thumbnail
+    {
+        get { return _thumbnail; }
+    }
 
 
     //Construct a level
-    public Level (string name, AudioClip audioClip, int difficulty, LevelTheme theme, List<Path> pathsEmpty, List<Path> pathsJump, List<Path> pathsSlide, List<Path> pathsRight, List<Path> pathsLeft)
+    public Level (string name, AudioClip audioClip, int difficulty, LevelTheme theme, Texture2D thumbnail)
     {
         _songName = name;
         _song = audioClip;
         _difficulty = difficulty;
         _levelTheme = theme;
-
-        foreach (Path path in pathsEmpty)
-        {
-            _pathsEmpty.Add(path);
-        }
-
-        foreach (Path path in pathsJump)
-        {
-            _pathsJump.Add(path);
-        }
-
-        foreach (Path path in pathsSlide)
-        {
-            _pathsSlide.Add(path);
-        }
-
-        foreach (Path path in pathsRight)
-        {
-            _pathsRight.Add(path);
-        }
-
-        foreach (Path path in pathsLeft)
-        {
-            _pathsLeft.Add(path);
-        }
+        _thumbnail = Sprite.Create(thumbnail, new Rect(0, 0, thumbnail.width, thumbnail.height), new Vector2(0.5f,0.5f));
     }
 
     //Get a specified path at a specified index
@@ -163,22 +145,22 @@ public class Level
     public void SetDifficultyFromBPM(int bpm)
     {
         float bpmRatio = bpm / 100;
-        if (bpmRatio >= 5)
+        if (bpmRatio >= 3)
         {
             _difficulty = 5;
             return;
         }
-        else if (bpmRatio >= 4)
+        else if (bpmRatio >= 2f)
         {
             _difficulty = 4;
             return;
         }
-        else if (bpmRatio >= 3)
+        else if (bpmRatio >= 1.75f)
         {
             _difficulty = 3;
             return;
         }
-        else if (bpmRatio >= 2)
+        else if (bpmRatio >= 1.4f)
         {
             _difficulty = 2;
             return;

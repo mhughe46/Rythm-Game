@@ -93,7 +93,7 @@ public class LevelGenerator : MonoBehaviour
             }
         }
 
-        level = new Level(songClip.name, songClip, difficulty, LevelTheme.debug, emptyPaths, jumpPaths, slidePaths, rightPaths, leftPaths);
+        level = new Level(songClip.name, songClip, difficulty, LevelTheme.debug, null);
         return level;
     }
 
