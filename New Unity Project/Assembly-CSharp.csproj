@@ -89,6 +89,7 @@
     <Compile Include="Assets\UniBpmAnalyzer-master\Assets\UniBpmAnalyzer\Example\BPMProcessor.cs" />
     <Compile Include="Assets\UniBpmAnalyzer-master\Assets\UniBpmAnalyzer\Scripts\BPMAnalysis.cs" />
     <None Include="Assets\UniBpmAnalyzer-master\ProjectSettings\ProjectVersion.txt" />
+    <None Include="Assets\Resources\Custom Songs\Example.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/atiny/Documents/GitHub/New Unity Project/New Unity Project/Rythm-Game/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
