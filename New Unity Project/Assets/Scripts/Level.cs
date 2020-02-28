@@ -182,5 +182,6 @@ public enum LevelTheme
 {
     debug,
     generic,
-    park
+    park,
+    night
 }

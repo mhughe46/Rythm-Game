@@ -132,6 +132,11 @@ public class LevelInitializer : MonoBehaviour
                                     levelTheme = LevelTheme.park;
                                     break;
                                 }
+                            case "night":
+                                {
+                                    levelTheme = LevelTheme.night;
+                                    break;
+                                }
                             default:
                                 {
                                     levelTheme = LevelTheme.park;
