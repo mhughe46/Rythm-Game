@@ -7,7 +7,14 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     List<Transform> _pathsEmpty;
     [SerializeField]
-    List<Transform> _pathsObstacles;
+    List<Transform> _pathsLeft;
+    [SerializeField]
+    List<Transform> _pathsRight;
+    [SerializeField]
+    List<Transform> _pathsJump;
+    [SerializeField]
+    List<Transform> _pathsSlide;
+
     private bool isGenerating;
 
     [SerializeField]
@@ -59,39 +66,6 @@ public class LevelGenerator : MonoBehaviour
     private Level CreateLevel(AudioClip songClip, int difficulty, LevelTheme theme = LevelTheme.park)
     {
         Level level;
-        
-        List<Path> emptyPaths = new List<Path>();
-        List<Path> jumpPaths = new List<Path>();
-        List<Path> slidePaths = new List<Path>();
-        List<Path> rightPaths = new List<Path>();
-        List<Path> leftPaths = new List<Path>();
-        foreach (KeyValuePair<string, Path> path in pathsData.pathsLibrary)
-        {
-            if (difficulty <= path.Value.difficulty && (path.Value.theme == theme || path.Value.theme == LevelTheme.generic))
-            {
-                switch (path.Value.pathType)
-                {
-                    case PathType.Empty:
-                        emptyPaths.Add(path.Value);
-                        break;
-                    case PathType.Jump:
-                        jumpPaths.Add(path.Value);
-                        break;
-                    case PathType.Slide:
-                        slidePaths.Add(path.Value);
-                        break;
-                    case PathType.Right:
-                        rightPaths.Add(path.Value);
-                        break;
-                    case PathType.Left:
-                        leftPaths.Add(path.Value);
-                        break;
-                    default:
-                        emptyPaths.Add(path.Value);
-                        break;
-                }
-            }
-        }
 
         level = new Level(songClip.name, songClip, difficulty, LevelTheme.debug, null);
         return level;
@@ -185,32 +159,32 @@ public class LevelGenerator : MonoBehaviour
         {
             case 0:
                 {
-                    SetNextPath(_pathsEmpty[3],true);
+                    SetNextPath(_pathsSlide[Random.Range(0, _pathsSlide.Count)],true);
                     break;
                 }
             case 1:
                 {
-                    SetNextPath(_pathsEmpty[5],true);
+                    SetNextPath(_pathsLeft[Random.Range(0, _pathsLeft.Count)],true);
                     break;
                 }
             case 2:
                 {
-                    SetNextPath(_pathsEmpty[0], true);
+                    SetNextPath(_pathsEmpty[Random.Range(0, _pathsEmpty.Count)], true);
                     break;
                 }
             case 3:
                 {
-                    SetNextPath(_pathsEmpty[4], true);
+                    SetNextPath(_pathsRight[Random.Range(0, _pathsRight.Count)], true);
                     break;
                 }
             case 4:
                 {
-                    SetNextPath(_pathsEmpty[2], true);
+                    SetNextPath(_pathsJump[Random.Range(0, _pathsJump.Count)], true);
                     break;
                 }
             default:
                 {
-                    SetNextPath(_pathsEmpty[0],true);
+                    SetNextPath(_pathsEmpty[Random.Range(0, _pathsEmpty.Count)],true);
                     break;
                 }
         }

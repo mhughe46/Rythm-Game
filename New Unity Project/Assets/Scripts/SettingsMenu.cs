@@ -17,6 +17,15 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         GetResolutions();
+
+        if (PlayerPrefs.HasKey("MusicVol"))
+            SetMusicLevel(PlayerPrefs.GetFloat("MusicVol"));
+
+        if (PlayerPrefs.HasKey("SFXVol"))
+            SetSoundLevel(PlayerPrefs.GetFloat("SFXVol"));
+
+        if (PlayerPrefs.HasKey("IsFullscreen"))
+            SetFullscreen(System.Convert.ToBoolean(PlayerPrefs.GetInt("IsFullscreen")));
     }
 
     private void GetResolutions()
@@ -47,16 +56,22 @@ public class SettingsMenu : MonoBehaviour
     public void SetMusicLevel(float sliderValue)
     {
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MusicVol", sliderValue);
+        PlayerPrefs.Save();
     }
 
     public void SetSoundLevel(float sliderValue)
     {
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("SFXVol", sliderValue);
+        PlayerPrefs.Save();
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        PlayerPrefs.SetInt("IsFullscreen", System.Convert.ToInt32(isFullscreen));
+        PlayerPrefs.Save();
     }
 
     public void SetResolution(int resolutionIndex)

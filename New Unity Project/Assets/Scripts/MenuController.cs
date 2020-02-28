@@ -10,12 +10,12 @@ public class MenuController : MonoBehaviour
     Animator animator;
 
     [SerializeField]
-    LevelInitializer _levelData;
+    LevelInitializer _levelData = null;
 
     [SerializeField]
-    Transform _levelHolderIncluded;
+    Transform _levelHolderIncluded = null;
     [SerializeField]
-    Transform _levelHolderModded;
+    Transform _levelHolderModded = null;
 
     [SerializeField]
     Transform _levelPrefab;
@@ -61,6 +61,11 @@ public class MenuController : MonoBehaviour
             case LevelTheme.park:
                 {
                     SceneManager.LoadScene("Enviro_Park");
+                    break;
+                }
+            case LevelTheme.night:
+                {
+                    SceneManager.LoadScene("Enviro_Night");
                     break;
                 }
             default:

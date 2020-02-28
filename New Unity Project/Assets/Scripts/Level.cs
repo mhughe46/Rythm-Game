@@ -15,12 +15,6 @@ public class Level
     [SerializeField]
     private Sprite _thumbnail;
 
-    private List<Path> _pathsEmpty = new List<Path>();
-    private List<Path> _pathsJump = new List<Path>();
-    private List<Path> _pathsSlide = new List<Path>();
-    private List<Path> _pathsRight = new List<Path>();
-    private List<Path> _pathsLeft = new List<Path>();
-
     public string Name
     {
         get { return _songName;}
@@ -55,91 +49,6 @@ public class Level
         _difficulty = difficulty;
         _levelTheme = theme;
         _thumbnail = Sprite.Create(thumbnail, new Rect(0, 0, thumbnail.width, thumbnail.height), new Vector2(0.5f,0.5f));
-    }
-
-    //Get a specified path at a specified index
-    public Transform GetPath(int pathListIndex, int pathIndex)
-    {
-        List<Path> pathToSearch;
-        switch (pathListIndex)
-        {
-            case 0:
-                {
-                    pathToSearch = _pathsEmpty;
-                    break;
-                }
-            case 1:
-                {
-                    pathToSearch = _pathsJump;
-                    break;
-                }
-            case 2:
-                {
-                    pathToSearch = _pathsSlide;
-                    break;
-                }
-            case 3:
-                {
-                    pathToSearch = _pathsRight;
-                    break;
-                }
-            case 4:
-                {
-                    pathToSearch = _pathsLeft;
-                    break;
-                }
-            default:
-                {
-                    pathToSearch = _pathsEmpty;
-                    break;
-                }
-        }
-
-        if (pathIndex > pathToSearch.Count-1)
-        {
-            pathIndex = pathToSearch.Count - 1;
-        }
-        return pathToSearch[pathIndex].pathObject;
-    }
-
-    //Get a random path from a specified list
-    public Transform GetRandomPath(int pathListIndex)
-    {
-        List<Path> pathToSearch;
-        switch (pathListIndex)
-        {
-            case 0:
-                {
-                    pathToSearch = _pathsEmpty;
-                    break;
-                }
-            case 1:
-                {
-                    pathToSearch = _pathsJump;
-                    break;
-                }
-            case 2:
-                {
-                    pathToSearch = _pathsSlide;
-                    break;
-                }
-            case 3:
-                {
-                    pathToSearch = _pathsRight;
-                    break;
-                }
-            case 4:
-                {
-                    pathToSearch = _pathsLeft;
-                    break;
-                }
-            default:
-                {
-                    pathToSearch = _pathsEmpty;
-                    break;
-                }
-        }
-        return pathToSearch[Random.Range(0,pathToSearch.Count-1)].pathObject;
     }
 
     public void SetDifficultyFromBPM(int bpm)
@@ -182,5 +91,6 @@ public enum LevelTheme
 {
     debug,
     generic,
-    park
+    park,
+    night
 }

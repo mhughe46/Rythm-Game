@@ -349,7 +349,7 @@ MonoBehaviour:
     _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
   - _songName: Mad Power
     _song: {fileID: 8300000, guid: 070fd23bc1f0f694e9d48358a924746a, type: 3}
-    _levelTheme: 2
+    _levelTheme: 3
     _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
   - _songName: Boom
     _song: {fileID: 8300000, guid: 809d29548ac3b1845b6c659179f2832a, type: 3}
