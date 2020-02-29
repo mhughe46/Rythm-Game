@@ -14,8 +14,8 @@ public class Settings : MonoBehaviour
 
     private void Update()
     {
-        mixer.SetFloat("MusicVolume", musicVolume);
-        mixer.SetFloat("SFXVolume", sfxVolume);
+        //mixer.SetFloat("MusicVolume", musicVolume);
+        //mixer.SetFloat("SFXVolume", sfxVolume);
     }
 
 

@@ -20,12 +20,18 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField]
     Slider soundSlider = null;
 
+    [SerializeField]
+    GameObject optionsPanel = null;
+
     private void Start()
     {
         GetResolutions();
 
         if (PlayerPrefs.HasKey("MusicVol"))
+        {
             SetMusicLevel(PlayerPrefs.GetFloat("MusicVol"));
+            print("Has Key");
+        }
 
         if (PlayerPrefs.HasKey("SFXVol"))
             SetSoundLevel(PlayerPrefs.GetFloat("SFXVol"));
@@ -37,6 +43,14 @@ public class SettingsMenu : MonoBehaviour
         audioMixer.GetFloat("SFXVolume", out float sfxVol);
         musicSlider.value = Mathf.Pow(10, musicVol / 20f);
         soundSlider.value = Mathf.Pow(10, sfxVol / 20f);
+    }
+
+    private void Update()
+    {
+        if (optionsPanel != null && Input.GetButtonDown("Cancel"))
+        {
+            EnableOptions();
+        }
     }
 
     private void GetResolutions()
@@ -68,6 +82,7 @@ public class SettingsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVol", sliderValue);
+        print("Music Volume " + sliderValue);
         PlayerPrefs.Save();
     }
 
@@ -75,6 +90,7 @@ public class SettingsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("SFXVol", sliderValue);
+        print("Sound Volume " + sliderValue);
         PlayerPrefs.Save();
     }
 
@@ -89,5 +105,20 @@ public class SettingsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void EnableOptions()
+    {
+        if (!optionsPanel.activeSelf)
+        {
+            optionsPanel.SetActive(true);
+
+            Time.timeScale = 0;
+        }else if (optionsPanel.activeSelf)
+        {
+            optionsPanel.SetActive(false);
+
+            Time.timeScale = 1;
+        }
     }
 }

@@ -38,7 +38,7 @@ public class MusicDelayer : MonoBehaviour
         if (timePlayed <= clip.length)
         {
             score += incAmount * combo;
-            Debug.Log(incAmount * combo);
+            //Debug.Log(incAmount * combo);
         }
         else {
             isPlaying = false;

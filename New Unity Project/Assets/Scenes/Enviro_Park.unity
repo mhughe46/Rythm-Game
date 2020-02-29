@@ -1284,9 +1284,10 @@ AudioSource:
   m_GameObject: {fileID: 1306141538}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1712120559173084289, guid: e9b5813e7af52dc45ac3407cdff8a7d8,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1970,6 +1971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008594892}
   - component: {fileID: 2008594891}
+  - component: {fileID: 2008594893}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Settings
@@ -2008,6 +2010,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2008594893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008594890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b39ce5bc01f7e44ea2c7aadb6aa2e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: e9b5813e7af52dc45ac3407cdff8a7d8, type: 2}
+  resolutionDropdown: {fileID: 1205576725825117591}
+  musicSlider: {fileID: 1205576725833414704}
+  soundSlider: {fileID: 1205576726415008436}
+  optionsPanel: {fileID: 1205576727702007962}
 --- !u!1 &2035038336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2062,7 +2081,10 @@ MonoBehaviour:
   - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
   - {fileID: 6418448355681623950, guid: 2e32600bd39ec5f458ef1147bdf0d3b4, type: 3}
   - {fileID: 5529719696363627200, guid: b300ba4a663c90d4784ce2997f2da48c, type: 3}
-  _pathsObstacles: []
+  _pathsLeft: []
+  _pathsRight: []
+  _pathsJump: []
+  _pathsSlide: []
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
   _pathData: {fileID: 0}
@@ -3283,7 +3305,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3472,7 +3494,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3711,8 +3733,8 @@ RectTransform:
   m_Father: {fileID: 1205576727117224218}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4258,8 +4280,8 @@ RectTransform:
   m_Father: {fileID: 1205576726214681293}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4487,30 +4509,13 @@ GameObject:
   - component: {fileID: 1205576727702007961}
   - component: {fileID: 1205576727702007967}
   - component: {fileID: 1205576727702007960}
-  - component: {fileID: 1205576727702007963}
   m_Layer: 0
   m_Name: OptionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1205576727702007963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205576727702007962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b39ce5bc01f7e44ea2c7aadb6aa2e93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: e9b5813e7af52dc45ac3407cdff8a7d8, type: 2}
-  resolutionDropdown: {fileID: 1205576725825117591}
-  musicSlider: {fileID: 1205576725833414704}
-  soundSlider: {fileID: 1205576726415008436}
+  m_IsActive: 0
 --- !u!222 &1205576727702007967
 CanvasRenderer:
   m_ObjectHideFlags: 0
