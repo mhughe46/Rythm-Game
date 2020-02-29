@@ -28,11 +28,15 @@ public class SpawnNotes : MonoBehaviour
 	float spawnHeight = 1;
 	float timeToHit = 2;
 	public float bounce;
+	int bpm;
 
 	public float[] spectrumData = new float[5];
 
 	void Start ()
 	{
+		AudioClip clip = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().song;
+		bpm = GetComponent<BPMProcessor>().calculateBPM(clip);
+		timeBetweenSpawns = 60 / (bpm/2.5f);
 		//10 = 1.35
 		timeToHit = GameObject.FindGameObjectWithTag("Settings").GetComponent<Settings>().NoteSpawnDelay;
 		spawnHeight = (float)(timeToHit) * 10; 

@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   bufferSize: 1024
-  gThresh: 1
+  gThresh: 0.01
   onBeat:
     m_PersistentCalls:
       m_Calls: []
@@ -818,8 +818,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.264647e+10, y: 2.6562882e+20, z: 1.8879014e+31,
-    w: 4.3973473e+21}
+  m_BoundingSphereOverride: {x: 7.67e-43, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
