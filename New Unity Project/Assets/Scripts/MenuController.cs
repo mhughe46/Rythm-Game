@@ -33,12 +33,14 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_levelData._selectedLevel.Song == null)
+        if (_levelData._selectedLevel.Song == null && _playLevelButton.interactable)
         {
             _playLevelButton.interactable = false;
-        }else
+            _playLevelButton.GetComponentInChildren<Text>().text = "Select a Level";
+        }else if (_levelData._selectedLevel.Song != null && !_playLevelButton.interactable)
         {
             _playLevelButton.interactable = true;
+            _playLevelButton.GetComponentInChildren<Text>().text = "Play Level";
         }
     }
 

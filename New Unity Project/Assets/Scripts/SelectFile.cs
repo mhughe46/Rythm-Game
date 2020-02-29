@@ -25,6 +25,7 @@ public class SelectFile : MonoBehaviour
 		//FileUtil.CopyFileOrDirectory(filePath, newPath);
 		System.IO.File.Copy(filePath, newPath);
 
+        Destroy(FindObjectOfType<GlobalController>().gameObject);
 		SceneManager.LoadScene(0);
         
     }
