@@ -818,8 +818,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.264647e+10, y: 2.6562882e+20, z: 1.8879014e+31,
-    w: 4.3973473e+21}
+  m_BoundingSphereOverride: {x: 0, y: -8.718788e-15, z: 6.67e-43, w: -8.718788e-15}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2077,14 +2076,14 @@ MonoBehaviour:
   _pathsEmpty:
   - {fileID: 6376306283950931105, guid: e5c19217ea4914a4aa833d6a0c3b27a9, type: 3}
   - {fileID: 5529719696363627200, guid: 6d39525357d25124291ad47772ca6bb3, type: 3}
-  - {fileID: 1666113770214287629, guid: fb1fb777e39239a4f9d84830c534343a, type: 3}
-  - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
-  - {fileID: 6418448355681623950, guid: 2e32600bd39ec5f458ef1147bdf0d3b4, type: 3}
+  _pathsLeft:
   - {fileID: 5529719696363627200, guid: b300ba4a663c90d4784ce2997f2da48c, type: 3}
-  _pathsLeft: []
-  _pathsRight: []
-  _pathsJump: []
-  _pathsSlide: []
+  _pathsRight:
+  - {fileID: 6418448355681623950, guid: 2e32600bd39ec5f458ef1147bdf0d3b4, type: 3}
+  _pathsJump:
+  - {fileID: 1666113770214287629, guid: fb1fb777e39239a4f9d84830c534343a, type: 3}
+  _pathsSlide:
+  - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
   _pathData: {fileID: 0}
