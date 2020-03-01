@@ -34,7 +34,7 @@ public class AudioProcessor : MonoBehaviour
 	private int nBand = 5;
 	// number of bands
 
-	public float gThresh = 0.1f;
+	float gThresh = .0001f;
 	// sensitivity
 
 	int blipDelayLen = 16;

@@ -24,18 +24,31 @@ public class LevelInitializer : MonoBehaviour
     [SerializeField]
     private BPMProcessor _BPMProcessor;
     // Start is called before the first frame update
-    void Start()
+
+    void OnEnable()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // called second
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (SceneManager.GetActiveScene().name == "LoadingScene") {
+            StartFunction();
+        }
+    }
+
+    void StartFunction() {
         foreach (Level level in _includedLevels)
         {
             int bpmOutput = _BPMProcessor.calculateBPM(level.Song);
             level.SetDifficultyFromBPM(bpmOutput);
         }
-        
+
 
         songPath = Application.dataPath + "/Resources/Custom Songs";
 
-        if(!Directory.Exists(songPath))
+        if (!Directory.Exists(songPath))
         {
             Directory.CreateDirectory(songPath);
         }
@@ -43,7 +56,7 @@ public class LevelInitializer : MonoBehaviour
         try
         {
             var songFiles = Directory.EnumerateFiles(songPath, "*.wav");
-            
+
 
             foreach (string currentFile in songFiles)
             {
@@ -64,6 +77,11 @@ public class LevelInitializer : MonoBehaviour
         }
 
         SceneManager.LoadScene("MainMenu");
+    }
+
+    void Start()
+    {
+        StartFunction();
     }
 
     private IEnumerator GetAudioFromFile(string path, string filename)
