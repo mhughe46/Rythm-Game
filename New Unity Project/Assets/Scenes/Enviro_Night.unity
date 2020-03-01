@@ -276,7 +276,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   bufferSize: 1024
-  gThresh: 1
   onBeat:
     m_PersistentCalls:
       m_Calls: []
@@ -1116,6 +1115,8 @@ MonoBehaviour:
   score: 0
   combo: 1
   scoreText: {fileID: 894687916}
+  winScoreText: {fileID: 0}
+  WinPanel: {fileID: 0}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1474,6 +1475,11 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1621308544}
+    - target: {fileID: 8969604643083980587, guid: 6b47e4e3e18e17641a9f76a0528ef8ff,
+        type: 3}
+      propertyPath: sfxAudio
+      value: 
+      objectReference: {fileID: 1306141540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b47e4e3e18e17641a9f76a0528ef8ff, type: 3}
 --- !u!1 &1395508849

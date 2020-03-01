@@ -346,27 +346,27 @@ MonoBehaviour:
   - _songName: Over the Ocean
     _song: {fileID: 8300000, guid: d34b232016dd18a4dbb5018e1b94b0c6, type: 3}
     _levelTheme: 2
-    _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
+    _thumbnail: {fileID: 21300000, guid: 672e7f3b4c44bea4fa8242ba100f0f06, type: 3}
   - _songName: Mad Power
     _song: {fileID: 8300000, guid: 070fd23bc1f0f694e9d48358a924746a, type: 3}
     _levelTheme: 3
-    _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
+    _thumbnail: {fileID: 21300000, guid: 9ccc4315a3eaafd4795569d7b26be212, type: 3}
   - _songName: Boom
     _song: {fileID: 8300000, guid: 809d29548ac3b1845b6c659179f2832a, type: 3}
     _levelTheme: 3
-    _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
+    _thumbnail: {fileID: 21300000, guid: 9ccc4315a3eaafd4795569d7b26be212, type: 3}
   - _songName: Boots! Boots! Boots!
     _song: {fileID: 8300000, guid: 5090641429da45e4b84e2fcd6cbff186, type: 3}
     _levelTheme: 3
-    _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
+    _thumbnail: {fileID: 21300000, guid: 9ccc4315a3eaafd4795569d7b26be212, type: 3}
   - _songName: Big Car Theft
     _song: {fileID: 8300000, guid: e2591337275b2ae429f492f48bc7476d, type: 3}
     _levelTheme: 2
-    _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
+    _thumbnail: {fileID: 21300000, guid: 672e7f3b4c44bea4fa8242ba100f0f06, type: 3}
   - _songName: Inner Journey
     _song: {fileID: 8300000, guid: 549dc166cb06db744a0a88ba56102592, type: 3}
     _levelTheme: 2
-    _thumbnail: {fileID: 21300000, guid: 8106aa51b569ff244a7e6e2e801d9492, type: 3}
+    _thumbnail: {fileID: 21300000, guid: 672e7f3b4c44bea4fa8242ba100f0f06, type: 3}
   _moddedLevels: []
   _selectedLevel:
     _songName: 

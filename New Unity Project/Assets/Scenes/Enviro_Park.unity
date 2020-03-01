@@ -817,7 +817,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 9.1835e-41, z: 5.495438e-37, w: 6.920723e-37}
+  m_BoundingSphereOverride: {x: 1.3563156e-19, y: 0, z: 0, w: 1.71e-43}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1622,6 +1622,11 @@ PrefabInstance:
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 1621308544}
+    - target: {fileID: 8969604643083980587, guid: 6b47e4e3e18e17641a9f76a0528ef8ff,
+        type: 3}
+      propertyPath: sfxAudio
+      value: 
+      objectReference: {fileID: 1306141540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b47e4e3e18e17641a9f76a0528ef8ff, type: 3}
 --- !u!1 &1395508849

@@ -1,4 +1,4 @@
 Name: Example Song
-Difficulty: 2
+Difficulty: 5
 Theme: park
 Thumbnail: C:\Users\spyjack\Pictures\Spyjack_Icons

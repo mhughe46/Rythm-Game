@@ -17,7 +17,16 @@ public class PlayerHealth : MonoBehaviour
     float _healTimer = 5;
 
     [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
     private AudioSource songAudio;
+
+    [SerializeField]
+    private AudioSource sfxAudio;
+
+    [SerializeField]
+    private List<AudioClip> soundEffects;
 
     [SerializeField]
     private Image _healthBar;
@@ -81,8 +90,10 @@ public class PlayerHealth : MonoBehaviour
         _timeSinceHurt = 0;
         _playerHealth--;
         doHurtPitch = true;
-        
 
+        sfxAudio.pitch = Random.Range(0.8f, 1.25f);
+        sfxAudio.PlayOneShot(soundEffects[1]);
+        
     }
 
     public void DoDeath()
@@ -93,6 +104,12 @@ public class PlayerHealth : MonoBehaviour
             if (songAudio.pitch > 0.01f)
             {
                 songAudio.pitch = Mathf.Lerp(songAudio.pitch, 0f, Time.deltaTime * 3);
+                animator.SetInteger("AnimState", 2);
+                if (!sfxAudio.isPlaying)
+                {
+                    sfxAudio.clip = soundEffects[0];
+                   sfxAudio.PlayDelayed(10 * Time.deltaTime);
+                }
             }else if (songAudio.pitch < 0.01f)
             {
                 songAudio.Pause();
