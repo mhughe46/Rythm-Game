@@ -12,6 +12,8 @@ public class MusicDelayer : MonoBehaviour
     AudioClip clip;
     int incAmount = 1;
     public Text scoreText;
+    public Text winScoreText;
+    public GameObject WinPanel;
 
 
     private void Start()
@@ -32,6 +34,10 @@ public class MusicDelayer : MonoBehaviour
             timePlayed += Time.deltaTime;
             IncreaseScore();
         }
+        bool isDead = GameObject.Find("/Player").GetComponent<PlayerHealth>().isDead;
+        if (timePlayed > clip.length && !isDead) {
+            WinPanel.SetActive(true);
+        }
     }
 
     void IncreaseScore() {
@@ -44,6 +50,7 @@ public class MusicDelayer : MonoBehaviour
             isPlaying = false;
         }
         scoreText.text = "Score: " + score + "\n" + "Combo: " + combo;
+        winScoreText.text = "Score: " + score + "\n" + "Combo: " + combo;
     }
 
 }
