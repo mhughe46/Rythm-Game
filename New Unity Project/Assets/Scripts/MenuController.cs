@@ -21,6 +21,9 @@ public class MenuController : MonoBehaviour
     Transform _levelPrefab;
 
     [SerializeField]
+    Text _highscoreText;
+
+    [SerializeField]
     Button _playLevelButton;
     // Start is called before the first frame update
     void Start()
@@ -38,10 +41,15 @@ public class MenuController : MonoBehaviour
         {
             _playLevelButton.interactable = false;
             _playLevelButton.GetComponentInChildren<Text>().text = "Select a Level";
+            _highscoreText.text = "";
         }else if (_levelData._selectedLevel.Song != null && !_playLevelButton.interactable)
         {
             _playLevelButton.interactable = true;
             _playLevelButton.GetComponentInChildren<Text>().text = "Play Level";
+            _highscoreText.text = "Highscore: " + _levelData._selectedLevel.Score;
+        }else if (_levelData._selectedLevel.Song != null && _playLevelButton.interactable)
+        {
+            _highscoreText.text = "Highscore: " + _levelData._selectedLevel.Score;
         }
     }
 
@@ -75,6 +83,11 @@ public class MenuController : MonoBehaviour
                     break;
                 }
             case LevelTheme.geometry:
+                {
+                    SceneManager.LoadScene("Enviro_Night");
+                    break;
+                }
+            case LevelTheme.city:
                 {
                     SceneManager.LoadScene("Enviro_Night");
                     break;

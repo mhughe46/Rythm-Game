@@ -25,6 +25,10 @@ public class LevelSelector : MonoBehaviour
 
     public void SelectThisLevel()
     {
+        if (PlayerPrefs.HasKey(level.Name))
+        {
+            level.Score = PlayerPrefs.GetInt(level.Name);
+        }
         FindObjectOfType<LevelInitializer>()._selectedLevel = level;
     }
 

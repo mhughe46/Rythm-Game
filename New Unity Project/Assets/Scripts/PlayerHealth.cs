@@ -93,7 +93,8 @@ public class PlayerHealth : MonoBehaviour
 
         sfxAudio.pitch = Random.Range(0.8f, 1.25f);
         sfxAudio.PlayOneShot(soundEffects[1]);
-        
+
+        FindObjectOfType<MusicDelayer>().combo = 1;
     }
 
     public void DoDeath()
@@ -110,17 +111,27 @@ public class PlayerHealth : MonoBehaviour
                     sfxAudio.clip = soundEffects[0];
                    sfxAudio.PlayDelayed(10 * Time.deltaTime);
                 }
-            }else if (songAudio.pitch < 0.01f)
+            }else if (songAudio.pitch < 0.01f && animator.GetCurrentAnimatorStateInfo(0).IsName("Fall"))
             {
                 songAudio.Pause();
-                Time.timeScale = 0;
+                FindObjectOfType<LevelGenerator>().isGenerating = false;
+                FindObjectOfType<MusicDelayer>().isPlaying = false;
+
+                GameObject.FindGameObjectWithTag("Processor").GetComponent<AudioSource>().Pause();
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Pause();
+
+                foreach (RotatePath path in FindObjectsOfType<RotatePath>())
+                {
+                    path.speed = 0;
+                }
+                //Time.timeScale = 0;
             }
         }
     }
 
     public void Heal(int healAmount = 1)
     {
-        if (_playerHealth < _playerMaxHealth)
+        if (_playerHealth < _playerMaxHealth && !isDead)
         {
             _playerHealth++;
         }
@@ -131,6 +142,9 @@ public class PlayerHealth : MonoBehaviour
         if (other.transform.tag == "Obstacle")
         {
             Hurt();
+        }else if (other.transform.tag == "Combo")
+        {
+            FindObjectOfType<MusicDelayer>().combo++;
         }
     }
 

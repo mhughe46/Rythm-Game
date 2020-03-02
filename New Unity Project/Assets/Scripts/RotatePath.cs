@@ -24,7 +24,10 @@ public class RotatePath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Rotate();
+        if (speed != 0)
+        {
+            Rotate();
+        }
     }
 
     private void Rotate()

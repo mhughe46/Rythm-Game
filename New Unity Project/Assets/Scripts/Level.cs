@@ -14,6 +14,8 @@ public class Level
     private LevelTheme _levelTheme;
     [SerializeField]
     private Sprite _thumbnail;
+    [SerializeField]
+    private int _score;
 
     private List<Path> _pathsEmpty = new List<Path>();
     private List<Path> _pathsJump = new List<Path>();
@@ -45,6 +47,11 @@ public class Level
     {
         get { return _thumbnail; }
     }
+    public int Score
+    {
+        get { return _score; }
+        set { _score = value; }
+    }
 
 
     //Construct a level
@@ -55,6 +62,7 @@ public class Level
         _difficulty = difficulty;
         _levelTheme = theme;
         _thumbnail = Sprite.Create(thumbnail, new Rect(0, 0, thumbnail.width, thumbnail.height), new Vector2(0.5f,0.5f));
+        _score = 0;
     }
 
     //Get a specified path at a specified index

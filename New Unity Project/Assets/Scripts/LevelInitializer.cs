@@ -25,10 +25,10 @@ public class LevelInitializer : MonoBehaviour
     private BPMProcessor _BPMProcessor;
     // Start is called before the first frame update
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    //void OnEnable()
+    //{
+    //    SceneManager.sceneLoaded += OnSceneLoaded;
+    //}
 
     // called second
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -43,6 +43,10 @@ public class LevelInitializer : MonoBehaviour
         {
             int bpmOutput = _BPMProcessor.calculateBPM(level.Song);
             level.SetDifficultyFromBPM(bpmOutput);
+            if (PlayerPrefs.HasKey(level.Name))
+            {
+                level.Score = PlayerPrefs.GetInt(level.Name);
+            }
         }
 
 
@@ -74,6 +78,10 @@ public class LevelInitializer : MonoBehaviour
         {
             int bpmOutput = _BPMProcessor.calculateBPM(level.Song);
             level.SetDifficultyFromBPM(bpmOutput);
+            if (PlayerPrefs.HasKey(level.Name))
+            {
+                level.Score = PlayerPrefs.GetInt(level.Name);
+            }
         }
 
         SceneManager.LoadScene("MainMenu");
@@ -151,6 +159,21 @@ public class LevelInitializer : MonoBehaviour
                                     break;
                                 }
                             case "night":
+                                {
+                                    levelTheme = LevelTheme.night;
+                                    break;
+                                }
+                            case "fall":
+                                {
+                                    levelTheme = LevelTheme.night;
+                                    break;
+                                }
+                            case "city":
+                                {
+                                    levelTheme = LevelTheme.night;
+                                    break;
+                                }
+                            case "geometry":
                                 {
                                     levelTheme = LevelTheme.night;
                                     break;

@@ -15,7 +15,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField]
     List<Transform> _pathsSlide;
 
-    private bool isGenerating;
+    public bool isGenerating = true;
 
     [SerializeField]
     List<Transform> _activePaths;
@@ -78,13 +78,16 @@ public class LevelGenerator : MonoBehaviour
 
     private void CheckPathForGarabge()
     {
-        if (_activePaths[0].eulerAngles.x <= 320f && _activePaths[0].eulerAngles.x >= 91f)
+        if (isGenerating)
         {
-            RecyclePath();
-        }
-        if (_activePaths[_activePaths.Count - 1].eulerAngles.x <= 75f)
-        {
-            CreatePath(_nextPath);
+            if (_activePaths[0].eulerAngles.x <= 320f && _activePaths[0].eulerAngles.x >= 91f)
+            {
+                RecyclePath();
+            }
+            if (_activePaths[_activePaths.Count - 1].eulerAngles.x <= 75f)
+            {
+                CreatePath(_nextPath);
+            }
         }
     }
 

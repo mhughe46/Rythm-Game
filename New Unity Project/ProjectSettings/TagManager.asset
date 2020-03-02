@@ -10,6 +10,7 @@ TagManager:
   - LevelGen
   - Settings
   - Obstacle
+  - Combo
   layers:
   - Default
   - TransparentFX

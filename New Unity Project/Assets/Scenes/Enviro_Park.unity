@@ -2492,7 +2492,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2035038337}
   - component: {fileID: 2035038338}
-  - component: {fileID: 2035038339}
   m_Layer: 0
   m_Name: LevelGen
   m_TagString: LevelGen
@@ -2540,6 +2539,7 @@ MonoBehaviour:
   - {fileID: 1666113770214287629, guid: fb1fb777e39239a4f9d84830c534343a, type: 3}
   _pathsSlide:
   - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
+  isGenerating: 1
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
   _pathData: {fileID: 0}
@@ -2557,28 +2557,6 @@ MonoBehaviour:
   _noteSpawner: {fileID: 0}
   _settings: {fileID: 2008594891}
   _globalPropScaler: 1
---- !u!114 &2035038339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035038336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23386bc8b1b25741821dfe7d5d09635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pathsEmpty:
-  - {fileID: 6459181657066954071, guid: 46572851b1f68104b8a1507866e1c177, type: 3}
-  _pathsJumpObis:
-  - {fileID: 6459181657066954071, guid: e605b53b065e6aa48b649ab0f478d437, type: 3}
-  _pathsSlideObis:
-  - {fileID: 6459181657066954071, guid: 46572851b1f68104b8a1507866e1c177, type: 3}
-  _pathsDodgeRight:
-  - {fileID: 5237082403839890546, guid: 6a8de0b4b11dcdd41bee242db5404ab2, type: 3}
-  _pathsDodgeLeft:
-  - {fileID: 5237082403839890546, guid: 6a8de0b4b11dcdd41bee242db5404ab2, type: 3}
 --- !u!1 &2066873538
 GameObject:
   m_ObjectHideFlags: 0
