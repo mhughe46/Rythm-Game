@@ -365,8 +365,8 @@ MonoBehaviour:
     _thumbnail: {fileID: 21300000, guid: 672e7f3b4c44bea4fa8242ba100f0f06, type: 3}
   - _songName: Inner Journey
     _song: {fileID: 8300000, guid: 549dc166cb06db744a0a88ba56102592, type: 3}
-    _levelTheme: 2
-    _thumbnail: {fileID: 21300000, guid: 672e7f3b4c44bea4fa8242ba100f0f06, type: 3}
+    _levelTheme: 4
+    _thumbnail: {fileID: 21300000, guid: aeaabd989da221b499837acb58bab8d2, type: 3}
   _moddedLevels: []
   _selectedLevel:
     _songName: 

@@ -738,7 +738,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 1e-45, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 6e-44, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1506,7 +1506,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395508849}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1536,7 +1536,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 06228d07b955c054389eab3b20e2e91c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 53b58df6108d34b479e9f7da6085406a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1555,8 +1555,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395508849}
   m_LocalRotation: {x: 0.25881857, y: -0, z: -0, w: 0.965926}
-  m_LocalPosition: {x: 0, y: 9.6, z: 41.7}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 4.5}
+  m_LocalPosition: {x: 1.4, y: 7.5, z: 41.7}
+  m_LocalScale: {x: 2.889181, y: 2.889181, z: 2.889181}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -2106,8 +2106,10 @@ MonoBehaviour:
   _pathsJump:
   - {fileID: 1666113770214287629, guid: fb1fb777e39239a4f9d84830c534343a, type: 3}
   - {fileID: 1385648790710283094, guid: 64f0ca89f18593d46b960440e3521ad3, type: 3}
+  - {fileID: 2916322582163598198, guid: b17768e490207ab409305a1166067f3e, type: 3}
   _pathsSlide:
   - {fileID: 4278596034115832829, guid: 824c0209efe7cbe4ab3aff182d8aff25, type: 3}
+  - {fileID: 2916322582163598198, guid: b17768e490207ab409305a1166067f3e, type: 3}
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
   _pathData: {fileID: 0}

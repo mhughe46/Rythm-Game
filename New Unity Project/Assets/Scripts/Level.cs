@@ -183,5 +183,8 @@ public enum LevelTheme
     debug,
     generic,
     park,
-    night
+    night,
+    fall,
+    geometry,
+    city
 }

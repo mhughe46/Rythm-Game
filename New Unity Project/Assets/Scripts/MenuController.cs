@@ -69,6 +69,16 @@ public class MenuController : MonoBehaviour
                     SceneManager.LoadScene("Enviro_Night");
                     break;
                 }
+            case LevelTheme.fall:
+                {
+                    SceneManager.LoadScene("Enviro_Fall");
+                    break;
+                }
+            case LevelTheme.geometry:
+                {
+                    SceneManager.LoadScene("Enviro_Night");
+                    break;
+                }
             default:
                 {
                     SceneManager.LoadScene("Enviro_Park");

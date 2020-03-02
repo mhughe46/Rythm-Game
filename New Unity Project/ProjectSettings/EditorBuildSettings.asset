@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Enviro_Park.unity
     guid: fe63b8c84cd32ff49aaf1c61ffdceef0
   - enabled: 1
+    path: Assets/Scenes/Enviro_Fall.unity
+    guid: bf5af9c52ba95a348b24690d8e916c19
+  - enabled: 1
     path: Assets/Scenes/Enviro_Night.unity
     guid: bdfb377069c98cc48a402bdf5c3d74a4
   - enabled: 1
