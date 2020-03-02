@@ -34,7 +34,7 @@ public class MusicDelayer : MonoBehaviour
             timePlayed += Time.deltaTime;
             IncreaseScore();
         }
-        bool isDead = GameObject.Find("/Player").GetComponent<PlayerHealth>().isDead;
+        bool isDead = GameObject.Find("Player").GetComponent<PlayerHealth>().isDead;
         if (timePlayed > clip.length && !isDead) {
             WinPanel.SetActive(true);
         }
