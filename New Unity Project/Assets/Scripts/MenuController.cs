@@ -25,12 +25,16 @@ public class MenuController : MonoBehaviour
 
     [SerializeField]
     Button _playLevelButton;
+
+    [SerializeField]
+    AudioSource _jukeBox;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
         _levelData = FindObjectOfType<LevelInitializer>();
         PopulateLevelSelectors();
+        RandomJukebox();
     }
 
 
@@ -118,5 +122,9 @@ public class MenuController : MonoBehaviour
         }
     }
 
-    
+    private void RandomJukebox()
+    {
+        _jukeBox.clip = _levelData._includedLevels[Random.Range(0, _levelData._includedLevels.Count)].Song;
+        _jukeBox.Play();
+    }
 }

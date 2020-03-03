@@ -36,6 +36,14 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.PostProcessing.PostProcessProfile
     - UnityEngine.Rendering.PostProcessing.PostProcessVolume
     - UnityEngine.Rendering.PostProcessing.Vignette
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
@@ -60,7 +68,285 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
+    Assets/Scenes/Enviro_City.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9374}
+    - Class: 114
+      Script: {instanceID: 9416}
+    - Class: 114
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9422}
+    - Class: 114
+      Script: {instanceID: 9424}
+    - Class: 114
+      Script: {instanceID: 9430}
+    - Class: 114
+      Script: {instanceID: 9438}
+    - Class: 114
+      Script: {instanceID: 9446}
+    - Class: 114
+      Script: {instanceID: 9464}
+    - Class: 114
+      Script: {instanceID: 9466}
+    - Class: 114
+      Script: {instanceID: 9472}
+    - Class: 114
+      Script: {instanceID: 9474}
+    - Class: 114
+      Script: {instanceID: 9476}
+    - Class: 114
+      Script: {instanceID: 9478}
+    - Class: 114
+      Script: {instanceID: 9494}
+    - Class: 114
+      Script: {instanceID: 9660}
+    - Class: 114
+      Script: {instanceID: 9682}
+    - Class: 114
+      Script: {instanceID: 9712}
+    - Class: 114
+      Script: {instanceID: 9716}
+    - Class: 114
+      Script: {instanceID: 9718}
+    - Class: 114
+      Script: {instanceID: 9752}
+    - Class: 114
+      Script: {instanceID: 9756}
+    - Class: 114
+      Script: {instanceID: 9814}
+    - Class: 114
+      Script: {instanceID: 10012}
+    - Class: 114
+      Script: {instanceID: 10070}
+    - Class: 114
+      Script: {instanceID: 10110}
+    - Class: 114
+      Script: {instanceID: 10156}
+    - Class: 114
+      Script: {instanceID: 10416}
+    - Class: 114
+      Script: {instanceID: 10598}
+    - Class: 114
+      Script: {instanceID: 10792}
+    - Class: 114
+      Script: {instanceID: 10798}
+    - Class: 114
+      Script: {instanceID: 10822}
+    - Class: 114
+      Script: {instanceID: 10888}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
     Assets/Scenes/Enviro_Fall.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9374}
+    - Class: 114
+      Script: {instanceID: 9416}
+    - Class: 114
+      Script: {instanceID: 9418}
+    - Class: 114
+      Script: {instanceID: 9422}
+    - Class: 114
+      Script: {instanceID: 9424}
+    - Class: 114
+      Script: {instanceID: 9430}
+    - Class: 114
+      Script: {instanceID: 9438}
+    - Class: 114
+      Script: {instanceID: 9446}
+    - Class: 114
+      Script: {instanceID: 9464}
+    - Class: 114
+      Script: {instanceID: 9466}
+    - Class: 114
+      Script: {instanceID: 9472}
+    - Class: 114
+      Script: {instanceID: 9474}
+    - Class: 114
+      Script: {instanceID: 9476}
+    - Class: 114
+      Script: {instanceID: 9478}
+    - Class: 114
+      Script: {instanceID: 9494}
+    - Class: 114
+      Script: {instanceID: 9660}
+    - Class: 114
+      Script: {instanceID: 9682}
+    - Class: 114
+      Script: {instanceID: 9712}
+    - Class: 114
+      Script: {instanceID: 9716}
+    - Class: 114
+      Script: {instanceID: 9718}
+    - Class: 114
+      Script: {instanceID: 9752}
+    - Class: 114
+      Script: {instanceID: 9756}
+    - Class: 114
+      Script: {instanceID: 9814}
+    - Class: 114
+      Script: {instanceID: 10012}
+    - Class: 114
+      Script: {instanceID: 10070}
+    - Class: 114
+      Script: {instanceID: 10110}
+    - Class: 114
+      Script: {instanceID: 10156}
+    - Class: 114
+      Script: {instanceID: 10416}
+    - Class: 114
+      Script: {instanceID: 10598}
+    - Class: 114
+      Script: {instanceID: 10792}
+    - Class: 114
+      Script: {instanceID: 10798}
+    - Class: 114
+      Script: {instanceID: 10822}
+    - Class: 114
+      Script: {instanceID: 10888}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
+      Script: {instanceID: 0}
+    - Class: 136
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/Enviro_Geometry.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -430,8 +716,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10416}
     - Class: 114
-      Script: {instanceID: 10598}
-    - Class: 114
       Script: {instanceID: 10792}
     - Class: 114
       Script: {instanceID: 10798}
@@ -442,8 +726,6 @@ ScriptsOnlyBuild:
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -1333,13 +1615,13 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 5a8903f86f835b82515f60cdcee03b48
+      Hash: a78ebb60a35efbd461b2f1628cfe77f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MusicDelayer
   - hash:
       serializedVersion: 2
-      Hash: 6516f75a6d17ea35ceee0fa4e15530a9
+      Hash: 1523154d110e137917d5a5da9a0c694f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelGenerator
@@ -1375,7 +1657,7 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 1026045a337dcf83286bdfbd8b960535
+      Hash: fe8b02a7b18404a0bdd6e3656ae633a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerHealth
@@ -1435,7 +1717,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 222cfbe203aa6109e0ba0dbc9a30f16d
+      Hash: 31575b3ce9145d5026e44950264901a3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuController
@@ -1447,7 +1729,7 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
-      Hash: 61b69c1a7eeb870fb8a171d8a4723794
+      Hash: ddc645610ee0873af23221ea22905d8a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelInitializer
@@ -1471,7 +1753,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: f9be4fd4e02d2bce95a233e8640c3b1c
+      Hash: 1061fcecabf5aa07caab2422d3ad62e2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelSelector
@@ -1758,6 +2040,8 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Enviro_Park.unity
   - Assets/Scenes/Enviro_Fall.unity
   - Assets/Scenes/Enviro_Night.unity
+  - Assets/Scenes/Enviro_City.unity
+  - Assets/Scenes/Enviro_Geometry.unity
   - Assets/Scenes/OrionTest.unity
-  playerPath: A:/Spy's Projects/School Projects/SGD212/RythymRunner/TestBuild-06/Rhythm
+  playerPath: A:/Spy's Projects/School Projects/SGD212/RythymRunner/FinalTest/Rhythm
     Runner.exe

@@ -112,12 +112,12 @@ public class SettingsMenu : MonoBehaviour
         if (!optionsPanel.activeSelf)
         {
             optionsPanel.SetActive(true);
-
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Pause();
             Time.timeScale = 0;
         }else if (optionsPanel.activeSelf)
         {
             optionsPanel.SetActive(false);
-
+            GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().UnPause();
             Time.timeScale = 1;
         }
     }

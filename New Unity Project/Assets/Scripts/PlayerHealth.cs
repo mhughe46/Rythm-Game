@@ -31,6 +31,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private Image _healthBar;
 
+    [SerializeField]
+    private GameObject _losePanel;
+
     bool doHurtPitch = false;
     public bool isDead = false;
     // Start is called before the first frame update
@@ -124,6 +127,8 @@ public class PlayerHealth : MonoBehaviour
                 {
                     path.speed = 0;
                 }
+
+                _losePanel.SetActive(true);
                 //Time.timeScale = 0;
             }
         }
