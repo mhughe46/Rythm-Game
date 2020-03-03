@@ -23,6 +23,8 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField]
     GameObject optionsPanel = null;
 
+    public bool isPaused = false;
+
     private void Start()
     {
         GetResolutions();
@@ -113,11 +115,15 @@ public class SettingsMenu : MonoBehaviour
         {
             optionsPanel.SetActive(true);
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Pause();
+            GameObject.FindGameObjectWithTag("Processor").GetComponent<AudioSource>().Pause();
+            isPaused = true;
             Time.timeScale = 0;
         }else if (optionsPanel.activeSelf)
         {
             optionsPanel.SetActive(false);
             GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().UnPause();
+            GameObject.FindGameObjectWithTag("Processor").GetComponent<AudioSource>().UnPause();
+            isPaused = false;
             Time.timeScale = 1;
         }
     }

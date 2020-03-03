@@ -1897,7 +1897,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 5edc9b184d634dddfd3bbc96864dbfdc
+      Hash: c35cf9d7b75b42532d60e3f9113f42ce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SettingsMenu
@@ -2043,5 +2043,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Enviro_City.unity
   - Assets/Scenes/Enviro_Geometry.unity
   - Assets/Scenes/OrionTest.unity
-  playerPath: A:/Spy's Projects/School Projects/SGD212/RythymRunner/RealFinalThisTime/Rhythm
+  playerPath: A:/Spy's Projects/School Projects/SGD212/RythymRunner/Proj2-Build-Team5/Rhythm
     Runner.exe

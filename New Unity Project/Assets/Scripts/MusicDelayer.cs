@@ -53,10 +53,13 @@ public class MusicDelayer : MonoBehaviour
     void IncreaseScore() {
         if (timePlayed <= clip.length)
         {
-            score += incAmount * combo;
-            if (combo > bestCombo)
+            if (!FindObjectOfType<SettingsMenu>().isPaused)
             {
-                bestCombo = combo;
+                score += incAmount * combo;
+                if (combo > bestCombo)
+                {
+                    bestCombo = combo;
+                }
             }
             //Debug.Log(incAmount * combo);
         }
