@@ -1268,8 +1268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cab3533a0654b04ba5529429137da6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaying: 0
   score: 0
   combo: 1
+  bestCombo: 1
   scoreText: {fileID: 894687916}
   winScoreText: {fileID: 1106337152}
   WinPanel: {fileID: 858887105}
@@ -2535,14 +2537,19 @@ MonoBehaviour:
   - {fileID: 6418448355681623950, guid: 77b7e802ae775c54c81c264c8fae1cd9, type: 3}
   - {fileID: 6418448355681623950, guid: 77b7e802ae775c54c81c264c8fae1cd9, type: 3}
   - {fileID: 6418448355681623950, guid: 77b7e802ae775c54c81c264c8fae1cd9, type: 3}
+  - {fileID: 6418448355681623950, guid: 57971215af09dfb46884eb95728d0f82, type: 3}
   _pathsLeft:
   - {fileID: 6418448355681623950, guid: fc6ae2e3bcd78444d8bef007d878bb49, type: 3}
+  - {fileID: 6418448355681623950, guid: 247e16a819642e04baeca4ef82f3c9a8, type: 3}
   _pathsRight:
   - {fileID: 6418448355681623950, guid: 5cfe594f1ab30b84483a58483b830968, type: 3}
+  - {fileID: 6418448355681623950, guid: 6060a6614706eb9459dbe8390153205a, type: 3}
   _pathsJump:
   - {fileID: 6418448355681623950, guid: 63d475d03f165e043b30325264a5e31d, type: 3}
+  - {fileID: 2016231949246371347, guid: 5e5d82f0f4e75e94e9694ee72569fd2d, type: 3}
   _pathsSlide:
   - {fileID: 4278596034115832829, guid: 90dc7c25cef77c847bf76b87f8794ec3, type: 3}
+  isGenerating: 1
   _activePaths: []
   _pathSpawnPoint: {x: 0, y: 0, z: 18.25}
   _pathData: {fileID: 0}
@@ -2553,6 +2560,7 @@ MonoBehaviour:
     _song: {fileID: 0}
     _levelTheme: 0
     _thumbnail: {fileID: 0}
+    _score: 0
   _levelSpeed: 2
   _bpmProcessor: {fileID: 0}
   pathsData: {fileID: 0}

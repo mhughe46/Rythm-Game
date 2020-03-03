@@ -1114,7 +1114,7 @@ MonoBehaviour:
   m_CellSize: {x: 150, y: 150}
   m_Spacing: {x: 8, y: 8}
   m_Constraint: 1
-  m_ConstraintCount: 11
+  m_ConstraintCount: 9
 --- !u!114 &384550417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1906,7 +1906,7 @@ MonoBehaviour:
   m_CellSize: {x: 150, y: 150}
   m_Spacing: {x: 8, y: 8}
   m_Constraint: 1
-  m_ConstraintCount: 11
+  m_ConstraintCount: 9
 --- !u!114 &918427969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4807,6 +4807,7 @@ MonoBehaviour:
     _song: {fileID: 0}
     _levelTheme: 0
     _thumbnail: {fileID: 0}
+    _score: 0
   _levelSpeed: 5
   _bpmProcessor: {fileID: 0}
   pathsData: {fileID: 0}
@@ -4905,7 +4906,7 @@ MonoBehaviour:
   m_Content: {fileID: 918427967}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 0
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -5330,7 +5331,7 @@ MonoBehaviour:
   m_Content: {fileID: 384550415}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 0
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135

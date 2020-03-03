@@ -144,7 +144,7 @@ public class LevelGenerator : MonoBehaviour
         }
         
         _nextPath = null;
-        SetNextPath(_pathsEmpty[0]);
+        SetNextPath(_pathsEmpty[0], false);
         return newPath;
     }
 
@@ -162,12 +162,12 @@ public class LevelGenerator : MonoBehaviour
         {
             case 0:
                 {
-                    SetNextPath(_pathsSlide[Random.Range(0, _pathsSlide.Count)],true);
+                    SetNextPath(_pathsSlide[Random.Range(0, _pathsSlide.Count)], true);
                     break;
                 }
             case 1:
                 {
-                    SetNextPath(_pathsLeft[Random.Range(0, _pathsLeft.Count)],true);
+                    SetNextPath(_pathsLeft[Random.Range(0, _pathsLeft.Count)], true);
                     break;
                 }
             case 2:
@@ -187,7 +187,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             default:
                 {
-                    SetNextPath(_pathsEmpty[Random.Range(0, _pathsEmpty.Count)],true);
+                    SetNextPath(_pathsEmpty[Random.Range(0, _pathsEmpty.Count)], true);
                     break;
                 }
         }

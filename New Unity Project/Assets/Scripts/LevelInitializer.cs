@@ -165,12 +165,12 @@ public class LevelInitializer : MonoBehaviour
                                 }
                             case "fall":
                                 {
-                                    levelTheme = LevelTheme.night;
+                                    levelTheme = LevelTheme.fall;
                                     break;
                                 }
                             case "city":
                                 {
-                                    levelTheme = LevelTheme.night;
+                                    levelTheme = LevelTheme.city;
                                     break;
                                 }
                             case "geometry":

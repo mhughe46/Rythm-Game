@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Enviro_Night.unity
     guid: bdfb377069c98cc48a402bdf5c3d74a4
   - enabled: 1
+    path: Assets/Scenes/Enviro_City.unity
+    guid: 9564f70694a2e284cb5670036d0a6a93
+  - enabled: 1
+    path: Assets/Scenes/Enviro_Geometry.unity
+    guid: 22d96fa39b2c7114a9c424af4013d066
+  - enabled: 1
     path: Assets/Scenes/OrionTest.unity
     guid: 0dd79283cabd5b74ebb85cfff41a4372
   m_configObjects: {}
